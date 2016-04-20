@@ -1,0 +1,9 @@
+* dotemacs
+  This repository represents my .emacs config for emacs-24.4. To install it you should:
+
+  1. install emacs-24.4
+  2. clone this repository
+  3. cd dotemacs
+  4. sh install-emacs-config.sh
+  5. run your emacs
+  

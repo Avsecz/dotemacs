@@ -1,0 +1,37 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: templateRmarkdown
+# key: templateRmarkdown
+# binding: direct-keybinding
+# --
+##'---
+##' title: Your title should be here
+##' author: Avsec
+##' output: 
+##'   html_document:
+##'     pandoc_args: ["+RTS", "-K64m","-RTS"]
+##'     toc: yes
+##'     css: ../knitr_html.css
+##'---
+##' ## Goal
+##'
+##' 
+##'
+##' ## Conclusions
+##'
+##' 
+##' 
+##' ## TODO's
+##' 
+##' * TODO : 
+##'
+##' ## Analysis
+##' 
+
+##+ include_default_kniter_values, child='../mertes_html_default_include.Rmd'
+##' 
+##+ set_workdir, echo=F
+library(knitr)
+library(rmarkdown)
+opts_knit$set(root.dir = getwd())
+opts_chunk$set(echo=FALSE, cache=F)
+options(width=140)
