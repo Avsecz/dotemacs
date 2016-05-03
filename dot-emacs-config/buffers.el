@@ -6,8 +6,16 @@
 (install-package 'scroll-restore
 		 'smooth-scrolling
 		 'transpose-frame	;for swaping the windows
+		 'fic-mode		;highlight TODO's in text
 		 )
 
+
+;; highlight TODO comments in code
+(require 'fic-mode)
+;; use the following keywords -- "FIXME" "TODO" "BUG"
+(add-hook 'elpy-mode-hook 'turn-on-fic-mode)
+(add-hook 'ess-mode-hook 'turn-on-fic-mode)
+(add-hook 'sh-mode-hook 'turn-on-fic-mode)
 
 
 ;;----------------------------------------------------

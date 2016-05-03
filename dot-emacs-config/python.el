@@ -39,12 +39,20 @@
 ;; enable elpy
 (elpy-enable)
 ;; use ipython
-;; (elpy-use-ipython)
 
+;; specify to use python3
+;; (setq py-python-command "python3")
+
+(setq python-shell-interpreter "~/bin/anaconda3/bin/python3")
+(if (at-work)
+    (setq python-shell-interpreter "~/bin/python_tf")
+)
+(setq elpy-rpc-python-command "python3")
+
+;; (elpy-use-ipython)
 
 ;; (add-hook 'elpy-mode-hook 'anaconda-mode)
 ;; (add-hook 'elpy-mode-hook 'anaconda-eldoc-mode)
-
 
 
 ;; shitch buffers

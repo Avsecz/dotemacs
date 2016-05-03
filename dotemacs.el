@@ -171,6 +171,10 @@
      (ess-R-fl-keyword:F&T))))
  '(ide-skel-tabbar-mwheel-mode nil t)
  '(inhibit-startup-screen t)
+ '(mediawiki-site-alist
+   (quote
+    (("Wikipedia" "http://en.wikipedia.org/w/" "username" "password" "Main Page")
+     ("mywiki" "http://gagneurweb.genzentrum.lmu.de/wiki/" "" "" "aggagneur:BayesRare_home"))))
  '(org-agenda-custom-commands
    (quote
     (("h" agenda "home"
@@ -206,7 +210,7 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/droak/notes/work.org" "~/bayesRare/main.org" "~/ase-grant/credase.org" "~/droak/notes/inbox.org" "~/droak/notes/embl.org" "~/droak/notes/my.org" "~/droak/notes/notes.org")))
+    ("~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org" "/data/ouga/home/ag_gagneur/avsec/projects/credase.org" "~/bayesRare/main.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-overriding-columns-format
    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
@@ -214,7 +218,7 @@
  '(org-agenda-skip-deadline-if-done t)
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-start-on-weekday nil)
- '(org-default-notes-file "~/droak/notes/my.org")
+ '(org-default-notes-file "~/bayesRare/main.org")
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-mobile-files (quote (org-agenda-files "~/droak/notes/my.org")))
  '(org-remember-store-without-prompt t)

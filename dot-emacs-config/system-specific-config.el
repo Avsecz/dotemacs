@@ -80,7 +80,9 @@
 (if (at-work)
     '(progn
        (setcdr (assoc "\\.html\\'" org-file-apps) "google-chrome --no-sandbox && google-chrome")
-       )
+       (setq openwith-associations
+	     '(("\\.html\\'" "google-chrome" (file)))
+       ))
   )
 
 (if (at-work)

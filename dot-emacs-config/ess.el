@@ -4,7 +4,6 @@
 (install-package 'ess 
 		 'ess-R-object-popup
 		 'polymode
-		 'fic-mode		;highlight TODO's in text
 		 ;; 'r-autoyas 		;maybe ? 
 		 )
 
@@ -173,12 +172,6 @@
 
 
 ;;<----- end copied
-
-;; highlight TODO comments in code
-(require 'fic-mode)
-;; use the following keywords -- "FIXME" "TODO" "BUG"
-(add-hook 'ess-mode-hook 'turn-on-fic-mode)
-(add-hook 'sh-mode-hook 'turn-on-fic-mode)
 
 
 
