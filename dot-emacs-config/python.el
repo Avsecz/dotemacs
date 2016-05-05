@@ -29,6 +29,9 @@
 ;; ignore = E111# , F401  # imported but unused
 ;; max-line-length = 160
 
+;; connecto to a noteboko:
+;; ein:notebooklist-open
+
 (install-package 'elpy
 		 'ein			;emacs ipyton notebook
 		 'anaconda-mode
@@ -49,11 +52,15 @@
 )
 (setq elpy-rpc-python-command "python3")
 
-;; (elpy-use-ipython)
+(elpy-use-ipython)
+
+;; Autocomplete
+;; (eval-after-load "python"
+;;   '(define-key inferior-python-mode-map "\t" 'python-shell-completion-complete-or-indent)
+;; )
 
 ;; (add-hook 'elpy-mode-hook 'anaconda-mode)
 ;; (add-hook 'elpy-mode-hook 'anaconda-eldoc-mode)
-
 
 ;; shitch buffers
 (define-key elpy-mode-map (kbd "C-c C-SPC") 'elpy-shell-switch-to-shell)
