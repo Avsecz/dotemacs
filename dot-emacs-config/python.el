@@ -4,11 +4,9 @@
 ;; https://github.com/jorgenschaefer/elpy
 
 ;; Used resource:
-;; https://realpython.com/blog/python/emacs-the-best-python-editor/
-;;
-;; TODO check 
 ;; https://www.fullstackpython.com/emacs.html
 ;; http://www.jesshamrick.com/2012/09/18/emacs-as-a-python-ide/
+;; https://realpython.com/blog/python/emacs-the-best-python-editor/
 ;;
 ;;Packages to install with pip:
 ;;# Either of these
