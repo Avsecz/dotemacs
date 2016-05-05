@@ -2,7 +2,9 @@
 ;; redo
 
 ;; support for docker
-(install-package 'dockerfile-mode)
+(install-package 'dockerfile-mode
+		 'autopair
+		 )
 
 ;; redo command ---------------------------------
 ;; (require 'redo+) ; - it doesn't work properly...
@@ -40,3 +42,7 @@
 ;; http://stackoverflow.com/questions/3124844/what-are-your-favorite-global-key-bindings-in-emacs
 ;; Magit rules!
 (global-set-key (kbd "C-x g") 'magit-status)
+
+
+(require 'autopair)
+(autopair-global-mode) ;; enable autopair in all buffers

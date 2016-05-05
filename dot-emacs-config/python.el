@@ -28,20 +28,37 @@
 ;; [flake8]
 ;; ignore = E111# , F401  # imported but unused
 ;; max-line-length = 160
+;;
+;; for jedi autocomplete:
+;; conda install jedi
+;; conda install virtualenv
+;; pip install epc
+;; http://tkf.github.io/emacs-jedi/latest/
 
 ;; connecto to a noteboko:
 ;; ein:notebooklist-open
 
 (install-package 'elpy
 		 'ein			;emacs ipyton notebook
-		 'anaconda-mode
+		 ;; 'anaconda-mode
 		 'flycheck
 		 'py-autopep8
+		 'company-jedi
+		 'epc
 		 )
 
+;; (require 'epc)
+;; (require 'deferred)
+
+;; (setq elpy-modules (delq 'elpy-module-company elpy-modules))
 ;; enable elpy
 (elpy-enable)
 ;; use ipython
+
+;; enable jedi
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)                      ; optional
+(setq jedi:complete-on-dot t)                 ; optional
 
 ;; specify to use python3
 ;; (setq py-python-command "python3")
@@ -53,6 +70,10 @@
 (setq elpy-rpc-python-command "python3")
 
 (elpy-use-ipython)
+
+;; disable indentation highlighting
+(remove-hook 'elpy-modules 'elpy-module-highlight-indentation)
+
 
 ;; Autocomplete
 ;; (eval-after-load "python"
@@ -81,5 +102,3 @@
 (require 'py-autopep8)
 (setq py-autopep8-options '("--ignore=E501,W293,W391,W690,E302"))
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
-
-

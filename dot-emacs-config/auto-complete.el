@@ -1,10 +1,15 @@
 ;; auto complete
 
-(install-package 'auto-complete)
+(install-package 'auto-complete
+		 'company)
 ;; 
 
 (require 'auto-complete)
 (require 'auto-complete-config)
+
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
 (ac-config-default)
 (global-auto-complete-mode t)
 
