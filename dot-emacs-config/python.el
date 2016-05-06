@@ -69,9 +69,17 @@
 
 (elpy-use-ipython)
 
+(setq python-shell-interpreter-args "--pylab") ;; --pdb
+
 ;; disable indentation highlighting
 (remove-hook 'elpy-modules 'elpy-module-highlight-indentation)
 
+;; disable auto-complete mode for python
+(add-hook 'elpy-mode-hook
+          (lambda ()
+             ;; (setq autopair-dont-activate t)
+             (auto-complete-mode -1))
+)
 
 ;; Autocomplete
 ;; (eval-after-load "python"
