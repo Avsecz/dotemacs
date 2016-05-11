@@ -224,7 +224,7 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org" "~/bayesRare/main.org")))
+    ("~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org" "/data/ouga/home/ag_gagneur/avsec/projects/credase.org" "~/bayesRare/main.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-overriding-columns-format
    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
@@ -272,6 +272,8 @@
 (load "~/.emacs.d/dot-emacs-config/alias.el")
 ;; --------------------------------------------
 
+;; overwrite jedi:complete
+(global-set-key (kbd "<C-tab>")  'tabbar-ruler-tabbar-forward-tab)
 
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.

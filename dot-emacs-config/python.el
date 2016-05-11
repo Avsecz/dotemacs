@@ -55,16 +55,16 @@
 
 ;; enable jedi
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)                      ; optional
+; (setq jedi:setup-keys t)                      ; optional
 (setq jedi:complete-on-dot t)                 ; optional
 
 ;; specify to use python3
 ;; (setq py-python-command "python3")
 
 (setq python-shell-interpreter "~/bin/anaconda3/bin/python3")
-(if (at-work)
-    (setq python-shell-interpreter "~/bin/python_tf")
-)
+;; (if (at-work)
+;;     (setq python-shell-interpreter "~/bin/python_tf")
+;; )
 (setq elpy-rpc-python-command "python3")
 
 (elpy-use-ipython)
