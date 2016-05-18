@@ -160,7 +160,7 @@
 (setq org-directory "~/droak/notes")
 
 (custom-set-variables
- '(org-agenda-files (quote ("~/droak/notes/my.org" "~/droak/notes/notes.org" "~/projects")))
+ '(org-agenda-files (quote ("~/droak/notes/my.org" "~/droak/notes/notes.org" "~/droak/notes/work.org" "~/projects")))
  ;; '(org-agenda-files (quote ("~/droak/notes")))
  '(org-default-notes-file "~/droak/notes/my.org")
  ;; '(org-default-notes-file "~/notes.org")
