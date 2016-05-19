@@ -59,7 +59,11 @@
     (progn
       ;; add projects to list
       (custom-set-variables
-       '(org-agenda-files (quote ("~/droak/notes/my.org" "~/droak/notes/notes.org" "~/projects" "~/bayesRare/main.org")))
+       '(org-agenda-files (quote ("~/droak/notes/my.org"
+				  "~/droak/notes/notes.org"
+				  "~/droak/notes/work.org"
+				  "~/projects" ; folder containing links to project .org files
+				  )))
        ;; '(org-agenda-files (quote ("~/droak/notes")))
-       '(org-default-notes-file "~/bayesRare/main.org"))
+       '(org-default-notes-file "~/bayesRare/work.org"))
       ))

@@ -189,56 +189,56 @@
    (quote
     (("Wikipedia" "http://en.wikipedia.org/w/" "username" "password" "Main Page")
      ("mywiki" "http://gagneurweb.genzentrum.lmu.de/wiki/" "" "" "aggagneur:BayesRare_home"))))
- '(org-agenda-custom-commands
-   (quote
-    (("h" agenda "home"
-      ((org-agenda-tag-filter-preset
-	(quote
-	 ("HOME")))))
-     ("w" agenda "work"
-      ((org-agenda-tag-filter-preset
-	(quote
-	 ("WORK")))))
-     ("d" todo "DELEGATED" nil)
-     ("c" todo "DONE|DEFERRED|CANCELLED" nil)
-     ("W" todo "WAITING" nil)
-     ("l" agenda "21 days"
-      ((org-agenda-ndays 21)))
-     ("A" agenda "#A tasks"
-      ((org-agenda-skip-function
-	(lambda nil
-	  (org-agenda-skip-entry-if
-	   (quote notregexp)
-	   "\\=.*\\[#A\\]")))
-       (org-agenda-ndays 1)
-       (org-agenda-overriding-header "Today's Priority #A tasks: ")))
-     ("u" alltodo "Unscheduled"
-      ((org-agenda-skip-function
-	(lambda nil
-	  (org-agenda-skip-entry-if
-	   (quote scheduled)
-	   (quote deadline)
-	   (quote regexp)
-	   "
-]+>")))
-       (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
- '(org-agenda-files
-   (quote
-    ("~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org" "/data/ouga/home/ag_gagneur/avsec/projects/credase.org" "~/bayesRare/main.org")))
- '(org-agenda-ndays 7)
- '(org-agenda-overriding-columns-format
-   "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
- '(org-agenda-show-all-dates t)
- '(org-agenda-skip-deadline-if-done t)
- '(org-agenda-skip-scheduled-if-done t)
- '(org-agenda-start-on-weekday nil)
- '(org-default-notes-file "~/bayesRare/main.org")
- '(org-fast-tag-selection-single-key (quote expert))
- '(org-mobile-files (quote (org-agenda-files "~/droak/notes/my.org")))
- '(org-remember-store-without-prompt t)
- '(org-reverse-note-order t)
- '(remember-annotation-functions (quote (org-remember-annotation)))
- '(remember-handler-functions (quote (org-remember-handler)))
+;;  '(org-agenda-custom-commands
+;;    (quote
+;;     (("h" agenda "home"
+;;       ((org-agenda-tag-filter-preset
+;; 	(quote
+;; 	 ("HOME")))))
+;;      ("w" agenda "work"
+;;       ((org-agenda-tag-filter-preset
+;; 	(quote
+;; 	 ("WORK")))))
+;;      ("d" todo "DELEGATED" nil)
+;;      ("c" todo "DONE|DEFERRED|CANCELLED" nil)
+;;      ("W" todo "WAITING" nil)
+;;      ("l" agenda "21 days"
+;;       ((org-agenda-ndays 21)))
+;;      ("A" agenda "#A tasks"
+;;       ((org-agenda-skip-function
+;; 	(lambda nil
+;; 	  (org-agenda-skip-entry-if
+;; 	   (quote notregexp)
+;; 	   "\\=.*\\[#A\\]")))
+;;        (org-agenda-ndays 1)
+;;        (org-agenda-overriding-header "Today's Priority #A tasks: ")))
+;;      ("u" alltodo "Unscheduled"
+;;       ((org-agenda-skip-function
+;; 	(lambda nil
+;; 	  (org-agenda-skip-entry-if
+;; 	   (quote scheduled)
+;; 	   (quote deadline)
+;; 	   (quote regexp)
+;; 	   "
+;; ]+>")))
+;;        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
+;;  ;; '(org-agenda-files
+;;  ;;   (quote
+;;  ;;    ("~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org" "/data/ouga/home/ag_gagneur/avsec/projects/credase.org" "~/bayesRare/main.org")))
+;;  '(org-agenda-ndays 7)
+;;  '(org-agenda-overriding-columns-format
+;;    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
+;;  '(org-agenda-show-all-dates t)
+;;  '(org-agenda-skip-deadline-if-done t)
+;;  '(org-agenda-skip-scheduled-if-done t)
+;;  '(org-agenda-start-on-weekday nil)
+;;  '(org-default-notes-file "~/bayesRare/main.org")
+;;  '(org-fast-tag-selection-single-key (quote expert))
+;;  '(org-mobile-files (quote (org-agenda-files "~/droak/notes/my.org")))
+;;  '(org-remember-store-without-prompt t)
+;;  '(org-reverse-note-order t)
+ ;; '(remember-annotation-functions (quote (org-remember-annotation)))
+ ;; '(remember-handler-functions (quote (org-remember-handler)))
  '(safe-local-variable-values
    (quote
     ((whitespace-style face tabs spaces trailing lines space-before-tab::space newline indentation::space empty space-after-tab::space space-mark tab-mark newline-mark))))

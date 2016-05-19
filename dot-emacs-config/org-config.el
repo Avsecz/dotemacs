@@ -360,7 +360,7 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/droak/notes/embl.org" "~/bayesRare/main.org" "~/droak/notes/my.org" "~/droak/notes/notes.org")))
+    ("~/droak/notes/embl.org" "~/bayesRare/main.org" "~/droak/notes/my.org" "~/droak/notes/work.org" "~/droak/notes/notes.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-overriding-columns-format
    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
