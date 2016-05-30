@@ -9,7 +9,7 @@
   (insert (format "%s" system-name))
   )
 
-;; naredi isto za službo
+;; functions to get where you are located
 (defun at-home-ubuntu ()
   (interactive)
   "Return true if you are at home"

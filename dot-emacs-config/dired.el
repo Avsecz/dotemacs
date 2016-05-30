@@ -19,7 +19,7 @@
 ;;"/home/avsec/bin/SparkR-pkg-master/sparkR"
 
 ;; show dired without group/owner column
-(setq dired-listing-switches "-lhGg")
+(setq dired-listing-switches "-lhGga")
 
 
 ;; open in desktop
@@ -48,4 +48,20 @@ Version 2015-06-12"
 ;; speedbar
 (custom-set-variables
  '(speedbar-show-unknown-files t)
-)
+ )
+
+(defun dired-dotfiles-toggle ()
+  "Show/hide dot-files"
+  (interactive)
+  (when (equal major-mode 'dired-mode)
+    (if (or (not (boundp 'dired-dotfiles-show-p)) dired-dotfiles-show-p) ; if currently showing
+	(progn 
+	  (set (make-local-variable 'dired-dotfiles-show-p) nil)
+	  (message "h")
+	  (dired-mark-files-regexp "^\\\.")
+	  (dired-do-kill-lines))
+      (progn (revert-buffer) ; otherwise just revert to re-show
+	     (set (make-local-variable 'dired-dotfiles-show-p) t)))))
+
+;; toggle show-hide hidden files
+(define-key dired-mode-map (kbd "C-x M-h") 'dired-dotfiles-toggle)
