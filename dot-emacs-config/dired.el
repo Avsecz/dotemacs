@@ -64,4 +64,7 @@ Version 2015-06-12"
 	     (set (make-local-variable 'dired-dotfiles-show-p) t)))))
 
 ;; toggle show-hide hidden files
-(define-key dired-mode-map (kbd "C-x M-h") 'dired-dotfiles-toggle)
+(add-hook 'dired-mode-hook
+  (lambda ()
+    (define-key dired-mode-map (kbd "C-x M-h") 'dired-dotfiles-toggle)
+    ))
