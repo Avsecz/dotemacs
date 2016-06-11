@@ -6,18 +6,20 @@
 (setq recentf-max-menu-items 25)
 (global-set-key  [f12] 'recentf-open-files)
 
-
 ;;---------------------------------------------------
-;; Bookmarks
+;; Bookmarks, currently disabled
 ;; http://ergoemacs.org/emacs/bookmark.html
 ;; http://www.emacswiki.org/emacs/BookMarks
 ;; Start emacs with bookmark list
 ;; (setq inhibit-splash-screen t)
-(require 'bookmark)
-(bookmark-bmenu-list)
-;; (switch-to-buffer "*Bookmark List*")
 
-(setq bookmark-save-flag 1) ; auto-save
+;; (require 'bookmark)
+;; (bookmark-bmenu-list)
+;; ;; (switch-to-buffer "*Bookmark List*")
+
+;; (setq bookmark-save-flag 1) ; auto-save
+
+
 ;; Options:
 ;; 1 - everytime bookmark is changed, automatically save it
 ;; t - save bookmark when emacs quits 
