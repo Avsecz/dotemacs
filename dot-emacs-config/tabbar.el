@@ -52,8 +52,17 @@
  '(tabbar-selected ((t (:inherit tabbar-default :background "#95CA59"))))
  '(tabbar-separator ((t (:inherit tabbar-default :background "#95CA59"))))
  '(tabbar-unselected ((t (:inherit tabbar-default)))))
+
 (tabbar-install-faces)
 
+
+;; fix the issue with not properly loading the function:
+;; tabbar-install-faces
+(defun load_tabbar-install-faces (frame)
+  (tabbar-install-faces)
+  )
+
+(add-hook 'after-make-frame-functions 'load_tabbar-install-faces)
 
 
 ;;--------------------------------------------------------------------------------------------------

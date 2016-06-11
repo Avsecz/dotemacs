@@ -25,7 +25,6 @@
 		 ;; 'shell-command
 		 ;; 'redo+   ;; doesn't work properly ... use lisp/redo.el instead
 		 )
-
 ;; don't use yasnippet in a global mode
 (yas-global-mode 0)
 
@@ -167,7 +166,14 @@
  '(LaTeX-math-abbrev-prefix "¸")
  '(TeX-source-correlate-method (quote synctex))
  '(TeX-source-correlate-start-server t)
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   (vector "#ffffff" "#f36c60" "#8bc34a" "#fff59d" "#4dd0e1" "#b39ddb" "#81d4fa" "#263238"))
  '(column-number-mode t)
+ '(custom-safe-themes
+   (quote
+    ("2305decca2d6ea63a408edd4701edf5f4f5e19312114c9d1e1d5ffe3112cde58" "e97dbbb2b1c42b8588e16523824bc0cb3a21b91eefd6502879cf5baa1fa32e10" default)))
  '(display-time-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ess-R-font-lock-keywords
@@ -183,62 +189,64 @@
      (ess-fl-keyword:delimiters . t)
      (ess-fl-keyword:=)
      (ess-R-fl-keyword:F&T))))
+ '(fci-rule-color "#37474f")
+ '(hl-sexp-background-color "#1c1f26")
  '(ide-skel-tabbar-mwheel-mode nil t)
  '(inhibit-startup-screen t)
  '(mediawiki-site-alist
    (quote
     (("Wikipedia" "http://en.wikipedia.org/w/" "username" "password" "Main Page")
      ("mywiki" "http://gagneurweb.genzentrum.lmu.de/wiki/" "" "" "aggagneur:BayesRare_home"))))
-;;  '(org-agenda-custom-commands
-;;    (quote
-;;     (("h" agenda "home"
-;;       ((org-agenda-tag-filter-preset
-;; 	(quote
-;; 	 ("HOME")))))
-;;      ("w" agenda "work"
-;;       ((org-agenda-tag-filter-preset
-;; 	(quote
-;; 	 ("WORK")))))
-;;      ("d" todo "DELEGATED" nil)
-;;      ("c" todo "DONE|DEFERRED|CANCELLED" nil)
-;;      ("W" todo "WAITING" nil)
-;;      ("l" agenda "21 days"
-;;       ((org-agenda-ndays 21)))
-;;      ("A" agenda "#A tasks"
-;;       ((org-agenda-skip-function
-;; 	(lambda nil
-;; 	  (org-agenda-skip-entry-if
-;; 	   (quote notregexp)
-;; 	   "\\=.*\\[#A\\]")))
-;;        (org-agenda-ndays 1)
-;;        (org-agenda-overriding-header "Today's Priority #A tasks: ")))
-;;      ("u" alltodo "Unscheduled"
-;;       ((org-agenda-skip-function
-;; 	(lambda nil
-;; 	  (org-agenda-skip-entry-if
-;; 	   (quote scheduled)
-;; 	   (quote deadline)
-;; 	   (quote regexp)
-;; 	   "
-;; ]+>")))
-;;        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
-;;  ;; '(org-agenda-files
-;;  ;;   (quote
-;;  ;;    ("~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org" "/data/ouga/home/ag_gagneur/avsec/projects/credase.org" "~/bayesRare/main.org")))
-;;  '(org-agenda-ndays 7)
-;;  '(org-agenda-overriding-columns-format
-;;    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
-;;  '(org-agenda-show-all-dates t)
-;;  '(org-agenda-skip-deadline-if-done t)
-;;  '(org-agenda-skip-scheduled-if-done t)
-;;  '(org-agenda-start-on-weekday nil)
-;;  '(org-default-notes-file "~/bayesRare/main.org")
-;;  '(org-fast-tag-selection-single-key (quote expert))
-;;  '(org-mobile-files (quote (org-agenda-files "~/droak/notes/my.org")))
-;;  '(org-remember-store-without-prompt t)
-;;  '(org-reverse-note-order t)
- ;; '(remember-annotation-functions (quote (org-remember-annotation)))
- ;; '(remember-handler-functions (quote (org-remember-handler)))
+ '(org-agenda-custom-commands
+   (quote
+    (("h" agenda "home"
+      ((org-agenda-tag-filter-preset
+	(quote
+	 ("HOME")))))
+     ("w" agenda "work"
+      ((org-agenda-tag-filter-preset
+	(quote
+	 ("WORK")))))
+     ("d" todo "DELEGATED" nil)
+     ("c" todo "DONE|DEFERRED|CANCELLED" nil)
+     ("W" todo "WAITING" nil)
+     ("l" agenda "21 days"
+      ((org-agenda-ndays 21)))
+     ("A" agenda "#A tasks"
+      ((org-agenda-skip-function
+	(lambda nil
+	  (org-agenda-skip-entry-if
+	   (quote notregexp)
+	   "\\=.*\\[#A\\]")))
+       (org-agenda-ndays 1)
+       (org-agenda-overriding-header "Today's Priority #A tasks: ")))
+     ("u" alltodo "Unscheduled"
+      ((org-agenda-skip-function
+	(lambda nil
+	  (org-agenda-skip-entry-if
+	   (quote scheduled)
+	   (quote deadline)
+	   (quote regexp)
+	   "
+]+>")))
+       (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
+ '(org-agenda-files
+   (quote
+    ("~/droak/notes/embl.org" "~/bayesRare/main.org" "~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org")))
+ '(org-agenda-ndays 7)
+ '(org-agenda-overriding-columns-format
+   "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
+ '(org-agenda-show-all-dates t)
+ '(org-agenda-skip-deadline-if-done t)
+ '(org-agenda-skip-scheduled-if-done t)
+ '(org-agenda-start-on-weekday nil)
+ '(org-default-notes-file "~/droak/notes/my.org")
+ '(org-fast-tag-selection-single-key (quote expert))
+ '(org-mobile-files (quote (org-agenda-files "~/droak/notes/my.org")))
+ '(org-remember-store-without-prompt t)
+ '(org-reverse-note-order t)
+ '(remember-annotation-functions (quote (org-remember-annotation)))
+ '(remember-handler-functions (quote (org-remember-handler)))
  '(safe-local-variable-values
    (quote
     ((whitespace-style face tabs spaces trailing lines space-before-tab::space newline indentation::space empty space-after-tab::space space-mark tab-mark newline-mark))))
@@ -248,7 +256,29 @@
  '(tabbar-highlight ((t nil)))
  '(tabbar-mode t nil (tabbar))
  '(tabbar-scroll-left-button (quote (("") "")))
- '(tabbar-scroll-right-button (quote (("") ""))))
+ '(tabbar-scroll-right-button (quote (("") "")))
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#f36c60")
+     (40 . "#ff9800")
+     (60 . "#fff59d")
+     (80 . "#8bc34a")
+     (100 . "#81d4fa")
+     (120 . "#4dd0e1")
+     (140 . "#b39ddb")
+     (160 . "#f36c60")
+     (180 . "#ff9800")
+     (200 . "#fff59d")
+     (220 . "#8bc34a")
+     (240 . "#81d4fa")
+     (260 . "#4dd0e1")
+     (280 . "#b39ddb")
+     (300 . "#f36c60")
+     (320 . "#ff9800")
+     (340 . "#fff59d")
+     (360 . "#8bc34a"))))
+ '(vc-annotate-very-old-color nil))
 
 ;; openwith & dired config
 (load "~/.emacs.d/dot-emacs-config/dired.el")
@@ -299,3 +329,5 @@
  '(tabbar-selected ((t (:inherit tabbar-default :background "#95CA59"))))
  '(tabbar-separator ((t (:inherit tabbar-default :background "#95CA59"))))
  '(tabbar-unselected ((t (:inherit tabbar-default)))))
+
+
