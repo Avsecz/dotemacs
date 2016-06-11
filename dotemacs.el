@@ -55,6 +55,10 @@
 (load "~/.emacs.d/dot-emacs-config/shell-script.el")
 
 ;; --------------------------------------------
+;; magit configuration
+(load "~/.emacs.d/dot-emacs-config/magit.el")
+
+;; --------------------------------------------
 ;; everything that has to do with terminal
 (load "~/.emacs.d/dot-emacs-config/terminal.el")
 ;; --------------------------------------------

@@ -38,11 +38,5 @@
   (interactive)
   (insert (format-time-string "%a %Y-%m-%d - %l:%M %p")))
 
-
-;; http://stackoverflow.com/questions/3124844/what-are-your-favorite-global-key-bindings-in-emacs
-;; Magit rules!
-(global-set-key (kbd "C-x g") 'magit-status)
-
-
 (require 'autopair)
 (autopair-global-mode) ;; enable autopair in all buffers
