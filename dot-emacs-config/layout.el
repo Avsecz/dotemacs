@@ -14,7 +14,10 @@
 
 
 
+;; turn off emacs alarm (say when pressing C-g)
+(setq ring-bell-function 'ignore)
 
+;; 
 (column-number-mode 1)
 (setq inhibit-startup-message t)
 (fset 'yes-or-no-p 'y-or-n-p)
