@@ -113,25 +113,25 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; python special folding - overwrite C-c <up>
 ;; http://emacs.stackexchange.com/questions/18381/hideshow-with-python-hiding-only-one-part
-(defun py-outline-level ()
-  (let (buffer-invisibility-spec)
-    (save-excursion
-      (skip-chars-forward "\t ")
-      (current-column))))
+;; (defun py-outline-level ()
+;;   (let (buffer-invisibility-spec)
+;;     (save-excursion
+;;       (skip-chars-forward "\t ")
+;;       (current-column))))
 
-(defun hide-body-recenter ()
-  (interactive)
-  (hide-body)
-  (recenter))
+;; (defun hide-body-recenter ()
+;;   (interactive)
+;;   (hide-body)
+;;   (recenter))
 
-(defun my-pythonFold-hook ()
-  (setq outline-regexp "[^ \t\n]\\|[ \t]*\\(def[ \t]+\\|class[ \t]+\\)")
-  (setq outline-level 'py-outline-level)
-  (outline-minor-mode t)
-  (define-key elpy-mode-map (kbd "C-c <up>") 'hide-body-recenter)
-  (define-key elpy-mode-map (kbd "C-c <down>") 'show-all)
-)
+;; (defun my-pythonFold-hook ()
+;;   (setq outline-regexp "[^ \t\n]\\|[ \t]*\\(def[ \t]+\\|class[ \t]+\\)")
+;;   (setq outline-level 'py-outline-level)
+;;   (outline-minor-mode t)
+;;   (define-key elpy-mode-map (kbd "C-c <up>") 'hide-body-recenter)
+;;   (define-key elpy-mode-map (kbd "C-c <down>") 'show-all)
+;; )
 
-(add-hook 'elpy-mode-hook 'my-pythonFold-hook)
+;; (add-hook 'elpy-mode-hook 'my-pythonFold-hook)
 
 
