@@ -6,12 +6,21 @@
 		 'autopair
 		 )
 
+;; run a command in a different directory
+(defun in-directory (dir)
+  "Runs execute-extended-command with default-directory set to the given
+directory."
+  (interactive "DIn directory: ")
+  (let ((default-directory dir))
+    (call-interactively 'execute-extended-command)))
+(global-set-key (kbd "M-X") 'in-directory)
 ;; redo command ---------------------------------
 ;; (require 'redo+) ; - it doesn't work properly...
 
 (require 'redo)
 
 (global-set-key [(control :)] 'redo)
+
 (setq x-select-enable-clipboard t)
 
 ;; If this is a script what you wrote - make it automatically executable
