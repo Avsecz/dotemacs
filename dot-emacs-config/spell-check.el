@@ -6,11 +6,9 @@
 ;; (global-auto-revert-mode t)
 ;;----------------------------------------------------
 ;; flyspell - spell checker
-(install-package 'flycheck)
 
-(global-flycheck-mode)
-
-
+;; (install-package 'flycheck)
+;; (global-flycheck-mode)
 
 
 ;;(setq-default ispell-program-name "aspell")
