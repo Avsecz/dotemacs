@@ -5,7 +5,9 @@
 
 ;; highlight-indentation
 
-(install-package 'highlight-indentation)
+(install-package 'highlight-indentation
+		 'smart-mode-line
+		 )
 (require 'highlight-indentation)
 (set-face-background 'highlight-indentation-face "#2f3f3f")
 ;; (require 'highlight-indent-guides)
@@ -23,14 +25,70 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Display the time in the mode line
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
-(display-time)
+;; (setq display-time-24hr-format t)
+;; (setq display-time-day-and-date t)
+;; (display-time)
 
+
+;;--------------------------------------------
+;; smart line mode
+(install-package 'smart-mode-line
+		 'use-package
+		 'diminish
+		 )
+
+;; https://github.com/Malabarba/smart-mode-line
+(use-package smart-mode-line
+  :init
+  (progn
+    (setq sml/line-number-format    "%4l")
+    (setq sml/name-width            40) ; buffer name width in the mode-line
+    (setq sml/mode-width            'full) ; minor mode lighters area width
+    (setq sml/no-confirm-load-theme t)
+    (setq sml/theme 'light)
+    )
+  :config
+  (progn
+    (use-package rich-minority
+      :config
+      (progn
+        (setq rm-blacklist
+              '(" WK"        ; which-key
+		" Projectile"
+		" hc"        ; hardcore mode
+                " AC"        ; auto-complete
+                " vl"        ; global visual line mode enabled
+                " Wrap"      ; shows up if visual-line-mode is enabled for that buffer
+                " Omit"      ; omit mode in dired
+                " yas"       ; yasnippet
+                " drag"      ; drag-stuff-mode
+                " VHl"       ; volatile highlights
+                " ctagsU"    ; ctags update
+                " Undo-Tree" ; undo tree
+                " wr"        ; Wrap Region
+                " SliNav"    ; elisp-slime-nav
+                " Fly"       ; Flycheck
+                " PgLn"      ; page-line-break
+                " ElDoc"     ; eldoc
+                " GG"        ; ggtags
+                " hs"        ; hideshow
+                " hs+"       ;
+                " ez-esc"    ; easy-escape
+                " ivy"       ; ivy
+                " h"         ; hungry-delete-mode
+                ))
+	))
+    (sml/setup)))
+
+(provide 'setup-mode-line)
+;;--------------------------------------------
+;; 
 
 					; make file name and computer title
-(set-default 'frame-title-format 
-             (list "" "emacs" "@" (getenv "HOST") " : %f" ))
+
+(setq frame-title-format `(,(user-login-name) "@" ,
+			   (system-name) "     " global-mode-string "     %f" ))
+
 
 (setq font-lock-maximum-decoration t)
 
