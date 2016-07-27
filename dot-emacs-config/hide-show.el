@@ -8,60 +8,60 @@
 (add-hook 'Tex-mode-hook 'outline-minor-mode) ;;LaTeX
 (add-hook 'Tex-mode-hook
 	  (lambda()
-	    (local-set-key (kbd "C-c <right>") 'show-entry)
-	    (local-set-key (kbd "C-c <left>")  'hide-entry)
-	    (local-set-key (kbd "C-c <up>")    'hide-body)
-	    (local-set-key (kbd "C-c <down>")  'show-all)
+	    (local-set-key (kbd "C-x <right>") 'show-entry)
+	    (local-set-key (kbd "C-x <left>")  'hide-entry)
+	    (local-set-key (kbd "C-x <up>")    'hide-body)
+	    (local-set-key (kbd "C-x <down>")  'show-all)
 	    ))
 
 ;; text mode
 (add-hook 'text-mode-hook 'outline-minor-mode) 
 (add-hook 'text-mode-hook
 	  (lambda()
-	    (local-set-key (kbd "C-c <right>") 'show-entry)
-	    (local-set-key (kbd "C-c <left>")  'hide-entry)
-	    (local-set-key (kbd "C-c <up>")    'hide-body)
-	    (local-set-key (kbd "C-c <down>")  'show-all)
+	    (local-set-key (kbd "C-x <right>") 'show-entry)
+	    (local-set-key (kbd "C-x <left>")  'hide-entry)
+	    (local-set-key (kbd "C-x <up>")    'hide-body)
+	    (local-set-key (kbd "C-x <down>")  'show-all)
 	    ))
 
 
 ;; Show hide blocks
 (add-hook 'c-mode-common-hook
 	  (lambda()
-	    (local-set-key (kbd "C-c <right>") 'hs-show-block)
-	    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
-	    (local-set-key (kbd "C-c <up>")    'hs-hide-all)
-	    (local-set-key (kbd "C-c <down>")  'hs-show-all)
+	    (local-set-key (kbd "C-x <right>") 'hs-show-block)
+	    (local-set-key (kbd "C-x <left>")  'hs-hide-block)
+	    (local-set-key (kbd "C-x <up>")    'hs-hide-all)
+	    (local-set-key (kbd "C-x <down>")  'hs-show-all)
 	    (hs-minor-mode t)))
 
 (add-hook 'elpy-mode-hook
 	  (lambda()
-	    (local-set-key (kbd "C-c <right>") 'hs-show-block)
-	    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
-	    (local-set-key (kbd "C-c <up>")    'hs-hide-all)
-	    (local-set-key (kbd "C-c <down>")  'hs-show-all)
+	    (local-set-key (kbd "C-x <right>") 'hs-show-block)
+	    (local-set-key (kbd "C-x <left>")  'hs-hide-block)
+	    (local-set-key (kbd "C-x <up>")    'hs-hide-all)
+	    (local-set-key (kbd "C-x <down>")  'hs-show-all)
 	    (hs-minor-mode t)))
 (add-hook 'c++-mode-common-hook
 	  (lambda()
-	    (local-set-key (kbd "C-c <right>") 'hs-show-block)
-	    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
-	    (local-set-key (kbd "C-c <up>")    'hs-hide-all)
-	    (local-set-key (kbd "C-c <down>")  'hs-show-all)
+	    (local-set-key (kbd "C-x <right>") 'hs-show-block)
+	    (local-set-key (kbd "C-x <left>")  'hs-hide-block)
+	    (local-set-key (kbd "C-x <up>")    'hs-hide-all)
+	    (local-set-key (kbd "C-x <down>")  'hs-show-all)
 	    (hs-minor-mode t)))
 (add-hook 'ess-mode-hook
 	  (lambda()
-	    (local-set-key (kbd "C-c <right>") 'hs-show-block)
-	    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
-	    (local-set-key (kbd "C-c <up>")    'hs-hide-all)
-	    (local-set-key (kbd "C-c <down>")  'hs-show-all)
+	    (local-set-key (kbd "C-x <right>") 'hs-show-block)
+	    (local-set-key (kbd "C-x <left>")  'hs-hide-block)
+	    (local-set-key (kbd "C-x <up>")    'hs-hide-all)
+	    (local-set-key (kbd "C-x <down>")  'hs-show-all)
 	    (hs-minor-mode t)))
 
 (add-hook 'sh-mode-hook
 	  (lambda()
-	    (local-set-key (kbd "C-c <right>") 'hs-show-block)
-	    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
-	    (local-set-key (kbd "C-c <up>")    'hs-hide-all)
-	    (local-set-key (kbd "C-c <down>")  'hs-show-all)
+	    (local-set-key (kbd "C-x <right>") 'hs-show-block)
+	    (local-set-key (kbd "C-x <left>")  'hs-hide-block)
+	    (local-set-key (kbd "C-x <up>")    'hs-hide-all)
+	    (local-set-key (kbd "C-x <down>")  'hs-show-all)
 	    (hs-minor-mode t)))
 
 

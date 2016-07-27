@@ -14,8 +14,7 @@
 ;; winner-mode getting back to your old window configuration
 (when (fboundp 'winner-mode)
   (winner-mode 1))
-(global-set-key (kbd "C-x <left>") 'winner-undo)
-(global-set-key (kbd "C-x <right>") 'winner-redo)
+
 
 ;; http://projectile.readthedocs.io/en/latest/configuration/
 ;; .projectile file for initializatio

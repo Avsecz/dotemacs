@@ -134,9 +134,7 @@
 ;; (add-to-list 'auto-mode-alist '("\\.R$" . R-mode))
 
 
-;;--------------------------------------------------------------
-;; hide/show + autocomplete + outline mode
-(load "~/.emacs.d/dot-emacs-config/hide-show.el")
+
 
 ;;---------------------------------------------------------------
 ;; ESS - load Emacs speaks statistics:
@@ -295,6 +293,10 @@
 ;; load buffer shortcuts
 (load "~/.emacs.d/dot-emacs-config/buffers.el")
 
+;;--------------------------------------------------------------
+;; hide/show + autocomplete + outline mode
+(load "~/.emacs.d/dot-emacs-config/hide-show.el")
+
 
 ;; tabbar config 
 (load "~/.emacs.d/dot-emacs-config/tabbar.el")
@@ -313,3 +315,5 @@
 
 ;; overwrite jedi:complete
 (global-set-key (kbd "<C-tab>")  'tabbar-ruler-tabbar-forward-tab)
+
+(remove-hook 'find-file-hooks 'vc-find-file-hook)
