@@ -1,3 +1,4 @@
+
 ;; spell check
 
 ;; maybe this solution:?
@@ -5,6 +6,12 @@
 ;; (global-auto-revert-mode t)
 ;;----------------------------------------------------
 ;; flyspell - spell checker
+(install-package 'flycheck)
+
+(global-flycheck-mode)
+
+
+
 
 ;;(setq-default ispell-program-name "aspell")
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)

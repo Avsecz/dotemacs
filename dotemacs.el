@@ -179,6 +179,9 @@
    (quote
     ("2305decca2d6ea63a408edd4701edf5f4f5e19312114c9d1e1d5ffe3112cde58" "e97dbbb2b1c42b8588e16523824bc0cb3a21b91eefd6502879cf5baa1fa32e10" default)))
  '(display-time-mode t)
+ '(ede-project-directories
+   (quote
+    ("/home/avsec/suggestme/cms/zeromq-example/cpp/src")))
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ess-R-font-lock-keywords
    (quote
@@ -194,6 +197,8 @@
      (ess-fl-keyword:=)
      (ess-R-fl-keyword:F&T))))
  '(fci-rule-color "#37474f")
+ '(flycheck-lintr-linters
+   "with_defaults(line_length_linter(129), default = default_linters[-which(names(default_linters) %in% c(\"assignment_linter\",  \"commas_linter\", \"infix_spaces_linter\", \"camel_case_linter\", \"snake_case_linter\", \"single_quotes_linter\", \"trailing_blank_lines_linter\", \"trailing_whitespace_linter\", \"commented_code_linter\", \"object_usage_linter\"))])")
  '(hl-sexp-background-color "#1c1f26")
  '(ide-skel-tabbar-mwheel-mode nil t)
  '(inhibit-startup-screen t)
