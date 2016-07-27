@@ -7,23 +7,11 @@
 		 'smooth-scrolling
 		 'transpose-frame	;for swaping the windows
 		 'fic-mode		;highlight TODO's in text
-		 'projectile		;project management
-		 'flx-ido		;suggested by projectile
 		 )
 
 ;; winner-mode getting back to your old window configuration
 (when (fboundp 'winner-mode)
   (winner-mode 1))
-
-
-;; http://projectile.readthedocs.io/en/latest/configuration/
-;; .projectile file for initializatio
-;; C-u C-c p f -> override the project scope. Choose the actual .projectile file
-(projectile-global-mode)
-
-(def-projectile-commander-method ?c
-  "Run `compile' in the project."
-  (projectile-compile-project nil))
 
 ;; highlight TODO comments in code
 (require 'fic-mode)
@@ -31,10 +19,6 @@
 (add-hook 'elpy-mode-hook 'turn-on-fic-mode)
 (add-hook 'ess-mode-hook 'turn-on-fic-mode)
 (add-hook 'sh-mode-hook 'turn-on-fic-mode)
-
-;; Projectile:
-(projectile-global-mode)
-
 
 
 ;;----------------------------------------------------
