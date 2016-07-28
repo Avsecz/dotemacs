@@ -153,6 +153,10 @@
 
 (load "~/.emacs.d/dot-emacs-config/editing.el")
 
+;;----------------------------------------
+;; awesome helm + projectile
+(load "~/.emacs.d/dot-emacs-config/helm-projectile.el")
+
 ;;----------------------------------------------------------------------------------------
 
 ;; load and save state - not using it
