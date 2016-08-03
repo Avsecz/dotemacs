@@ -135,3 +135,5 @@
 ;; (add-hook 'elpy-mode-hook 'my-pythonFold-hook)
 
 
+;; fix from https://github.com/bbatsov/projectile/issues/1033
+(fset 'projectile-go-function 'projectile-go)

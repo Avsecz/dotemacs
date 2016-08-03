@@ -185,6 +185,7 @@
    (quote
     ("/home/avsec/suggestme/cms/zeromq-example/cpp/src")))
  '(ediff-split-window-function (quote split-window-horizontally))
+ '(elpy-test-pytest-runner-command (quote ("python_tf" "-m" "pytest")))
  '(ess-R-font-lock-keywords
    (quote
     ((ess-R-fl-keyword:modifiers . t)
