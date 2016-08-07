@@ -6,4 +6,4 @@
 
 ;; enable flyspell
 (dolist (hook '(protobuf-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode 1))))
+  (add-hook hook (lambda () (flycheck-mode 1))))
