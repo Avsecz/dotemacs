@@ -157,6 +157,10 @@
 ;; awesome helm + projectile
 (load "~/.emacs.d/dot-emacs-config/helm-projectile.el")
 
+;;----------------------------------------
+;; protobuff
+(load "~/.emacs.d/dot-emacs-config/protobuf.el")
+
 ;;----------------------------------------------------------------------------------------
 
 ;; load and save state - not using it

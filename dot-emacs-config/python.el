@@ -137,3 +137,13 @@
 
 ;; fix from https://github.com/bbatsov/projectile/issues/1033
 (fset 'projectile-go-function 'projectile-go)
+;; (projectile-register-project-type 'go projectile-go-function "go build ./..." "go test ./...")
+
+;; (defcustom projectile-go-function 'projectile-go
+;;   "Function to determine if project's type is go."
+;;   :group 'projectile
+;;   :type 'function)
+
+;; (projectile-register-project-type 'emacs-cask '("Cask") "cask install")
+;; ;; snip
+;; (projectile-register-project-type 'go projectile-go-function "go build ./..." "go test ./...")
