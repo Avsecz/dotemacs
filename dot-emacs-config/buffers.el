@@ -23,8 +23,25 @@
 
 ;;----------------------------------------------------
 ;; neotree
+;; https://www.emacswiki.org/emacs/NeoTree
 (require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
+;; (global-set-key [f7] 'neotree-toggle)
+;; directly open projectile
+(setq projectile-switch-project-action 'neotree-projectile-action)
+;; 
+(defun neotree-project-dir ()
+  "Open NeoTree at the projectile root."
+  (interactive)
+  (let ((project-dir (projectile-project-root))
+	(file-name (buffer-file-name)))
+    (if project-dir
+	(if (neotree-toggle)
+	    (progn
+	      (neotree-dir project-dir)
+	      (neotree-find file-name)))
+      (message "Could not find git project root."))))
+(global-set-key [f8] 'neotree-project-dir)
+
 ;;----------------------------------------------------
 ;;    scrolling
 ;;
@@ -78,13 +95,13 @@
 ;; http://stackoverflow.com/questions/1774832/how-to-swap-the-buffers-in-2-windows-emacs
 ;; ‘flip-frame’ … Flip vertically
 
-       ;; +------------+------------+      +------------+------------+
-       ;; |            |     B      |      |            D            |
-       ;; |     A      +------------+      +------------+------------+
-       ;; |            |     C      |  =>  |            |     C      |
-       ;; +------------+------------+      |     A      +------------+
-       ;; |            D            |      |            |     B      |
-       ;; +-------------------------+      +------------+------------+
+;; +------------+------------+      +------------+------------+
+;; |            |     B      |      |            D            |
+;; |     A      +------------+      +------------+------------+
+;; |            |     C      |  =>  |            |     C      |
+;; +------------+------------+      |     A      +------------+
+;; |            D            |      |            |     B      |
+;; +-------------------------+      +------------+------------+
 (global-set-key (kbd "C-x M-3") 'flip-frame)
 ;; ‘flip-frame’ … Flip vertically
 
