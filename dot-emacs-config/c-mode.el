@@ -42,3 +42,6 @@ of FILE in the current directory, suitable for creation"
 	    (set (make-local-variable 'compile-command)
 		 (format "make -f %s" (get-closest-pathname)))))
 
+
+(setq-default c-basic-offset 4)
+

@@ -7,6 +7,7 @@
 		 'smooth-scrolling
 		 'transpose-frame	;for swaping the windows
 		 'fic-mode		;highlight TODO's in text
+		 'neotree
 		 )
 
 ;; winner-mode getting back to your old window configuration
@@ -20,7 +21,10 @@
 (add-hook 'ess-mode-hook 'turn-on-fic-mode)
 (add-hook 'sh-mode-hook 'turn-on-fic-mode)
 
-
+;;----------------------------------------------------
+;; neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 ;;----------------------------------------------------
 ;;    scrolling
 ;;

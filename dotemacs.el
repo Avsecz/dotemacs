@@ -161,6 +161,10 @@
 ;; protobuff
 (load "~/.emacs.d/dot-emacs-config/protobuf.el")
 
+;;----------------------------------------
+;; c-mode
+(load "~/.emacs.d/dot-emacs-config/c-mode.el")
+
 ;;----------------------------------------------------------------------------------------
 
 ;; load and save state - not using it
@@ -248,7 +252,7 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/droak/notes/embl.org" "~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org")))
+    ("~/droak/notes/my.org" "~/droak/notes/embl.org" "~/droak/notes/work.org" "~/droak/notes/notes.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-overriding-columns-format
    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
@@ -326,3 +330,15 @@
 (global-set-key (kbd "<C-tab>")  'tabbar-ruler-tabbar-forward-tab)
 
 (remove-hook 'find-file-hooks 'vc-find-file-hook)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(tabbar-button ((t (:inherit tabbar-default :foreground "dark red"))))
+ '(tabbar-button-highlight ((t (:inherit tabbar-default))))
+ '(tabbar-default ((t (:inherit variable-pitch :background "#959A79" :foreground "black" :weight bold))))
+ '(tabbar-highlight ((t (:underline t))))
+ '(tabbar-selected ((t (:inherit tabbar-default :background "#95CA59"))))
+ '(tabbar-separator ((t (:inherit tabbar-default :background "#95CA59"))))
+ '(tabbar-unselected ((t (:inherit tabbar-default)))))
