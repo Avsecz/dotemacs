@@ -159,8 +159,10 @@
 
 ;;----------------------------------------
 ;; protobuff
-(load "~/.emacs.d/dot-emacs-config/protobuf.el")
-
+(if (at-home-ubuntu)
+    (progn
+      (load "~/.emacs.d/dot-emacs-config/protobuf.el")
+      ))
 ;;----------------------------------------
 ;; c-mode
 (load "~/.emacs.d/dot-emacs-config/c-mode.el")

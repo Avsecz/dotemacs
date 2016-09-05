@@ -13,7 +13,7 @@
 ;; (load "~/.emacs.d/mylisp/tabbar-ruler-20140905.1543/tabbar-ruler.el")
 (install-package 'tabbar-ruler)
 
-(require 'tabbar-ruler)
+;; (require 'tabbar-ruler)
 
 ;; (setq tabbar-buffer-groups-function
 ;;           (lambda ()
@@ -22,8 +22,7 @@
 ;; (setq tabbar-cycling-scope nil)
 ;; (setq tabbar-separator (quote ("  ")))
 
-
-(setq tabbar-ruler-global-tabbar t) ; If you want tabbar
+;; (setq tabbar-ruler-global-tabbar t) ; If you want tabbar
 
 (setq tabbar-ruler-global-ruler nil) ; if you want a global ruler
 (setq tabbar-ruler-popup-menu nil) ; If you want a popup menu.
@@ -126,11 +125,17 @@
 ;; tabbar-install-faces
 (defun load_tabbar-install-faces (frame)
   (tabbar-install-faces)
+  (setq tabbar-buffer-groups-function 'my-tabbar-ruler-projectile-tabbar-buffer-groups)
   )
 
 (add-hook 'after-make-frame-functions 'load_tabbar-install-faces)
 
+;; (setq tabbar-ruler-movement-timer-dealy 1000000)
 
+(defadvice enable-theme(after enable-theme-after activate)
+  (tabbar-install-faces))
+(defadvice disable-theme(after disable-theme-after activate)
+  (tabbar-install-faces))
 ;;--------------------------------------------------------------------------------------------------
 
 

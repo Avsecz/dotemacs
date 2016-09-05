@@ -147,3 +147,5 @@
 ;; (projectile-register-project-type 'emacs-cask '("Cask") "cask install")
 ;; ;; snip
 ;; (projectile-register-project-type 'go projectile-go-function "go build ./..." "go test ./...")
+(setq abbrev-file-name             ;; tell emacs where to read abbrev
+      "~/.emacs.d/abbrev_defs")    ;; definitions from...
