@@ -101,7 +101,7 @@
 
 
 ;; set a different font size:
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 105)
 (setq default-frame-alist (append (list 
 				   '(width  . 90)  ; Width set to 81 characters 
 				   '(height . 50)) ; Height set to 50 lines 

@@ -42,6 +42,16 @@
 					default-frame-alist)))
   )
 
+(if (at-work)
+    (progn
+      ;; set a different font size:
+      (set-face-attribute 'default nil :height 105)
+      ;; (setq default-frame-alist (append (list 
+      ;; 					 '(width  . 81)  ; Width set to 81 characters 
+      ;; 					 '(height . 50)) ; Height set to 50 lines 
+      ;; 					default-frame-alist))
+      )
+  )
 
 ;; --------------------------------------------
 ;; org mode 

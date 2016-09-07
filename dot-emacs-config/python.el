@@ -43,6 +43,7 @@
 		 'py-autopep8
 		 'company-jedi
 		 'epc
+		 'pyenv-mode
 		 )
 
 ;; (require 'epc)
@@ -80,6 +81,12 @@
              ;; (setq autopair-dont-activate t)
              (auto-complete-mode -1))
 )
+
+(setenv "WORKON_HOME"
+	(concat (file-name-directory (executable-find "ipython")) "../envs")
+)
+(pyvenv-mode 1)
+
 
 ;; Autocomplete
 ;; (eval-after-load "python"
