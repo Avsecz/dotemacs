@@ -28,6 +28,8 @@
 (require 'company-web-html)
 (require 'company-web-jade)
 
+;; Open files with
+(define-key web-mode-map (kbd "C-c v") 'browse-url-of-buffer)
 
 ;; associate files with web-mode
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))

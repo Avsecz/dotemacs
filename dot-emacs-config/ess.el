@@ -33,6 +33,8 @@
 
 (add-hook 'ess-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'ess-mode-hook 'flyspell-prog-mode)
+(add-hook 'ess-mode-hook 'ess-roxy-mode)
+
 ;; (setq inferior-R-args "--vanilla") ;; allways run vanilla R
 (setq inferior-R-args "--no-restore-data --no-save")
 ;;(add-hook 'ess-mode-hook 'auto-complete-mode)
@@ -173,8 +175,103 @@
 
 ;;<----- end copied
 
+;; Add default scripts
+
+(setq yt/ess--RProfile-string "
+#### change this file name to .Rprofile and place to ~/userName so when R starts, the following command will be processed automatically
+
+## http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile
+options(repos=structure(c(CRAN=\"http://ftp5.gwdg.de/pub/misc/cran/\")))
+options(browser = \"google-chrome\")
+
+options(\"digits.secs\"=3)            # show sub-second time stamps
+
+require(data.table)
+options(datatable.prettyprint.char = 25)
+
+render_pdf <- function(f){
+    rmarkdown::render(f,output_format=\"pdf_document\")
+}
+
+install_bioc <- function(...){
+  source(\"https://bioconductor.org/biocLite.R\")
+  biocLite(...)
+}
+
+rmarkdown_open_chrome <- function(input, ...){
+    ## substitute .R with .html
+    html_input <- gsub(\"\\.R$\",\"\\.html\",input)
+    browseURL(html_input, browser=\"google-chrome\")
+}
+
+## improved list of objects
+.ls.objects <- function (pos = 1, pattern, order.by,
+                 decreasing=FALSE, head=FALSE, n=5)
+    {
+        napply <- function(names, fn) sapply(names, function(x)
+            fn(get(x, pos = pos)))
+        names <- ls(pos = pos, pattern = pattern)
+        obj.class <- napply(names, function(x) as.character(class(x))[1])
+        obj.mode <- napply(names, mode)
+        obj.type <- ifelse(is.na(obj.class), obj.mode, obj.class)
+        obj.prettysize <- napply(names, function(x) {
+                                    capture.output(print(object.size(x), units = \"auto\")) })
+        obj.size <- napply(names, object.size)
+        obj.dim <- t(napply(names, function(x)
+            as.numeric(dim(x))[1:2]))
+        vec <- is.na(obj.dim)[, 1] & (obj.type != \"function\")
+        obj.dim[vec, 1] <- napply(names, length)[vec]
+        out <- data.frame(obj.type, obj.size, obj.prettysize, obj.dim)
+        names(out) <- c(\"Type\", \"Size\", \"PrettySize\", \"Rows\", \"Columns\")
+        if (!missing(order.by))
+            out <- out[order(out[[order.by]], decreasing=decreasing), ]
+        if (head)
+            out <- head(out, n)
+        out
+    }
+## shorthand
+lsos <- function(..., n=10) {
+    .ls.objects(..., order.by=\"Size\", decreasing=TRUE, head=TRUE, n=n)
+}")
+
+(add-hook 'ess-post-run-hook
+          (lambda ()
+            (goto-char (point-max))
+            (insert yt/ess--RProfile-string)
+            (inferior-ess-send-input) ;; execuate the R scripts
+            ;; clean up
+            (search-backward "Type 'q()' to quit R.")
+            (next-line)
+            (delete-region (point) (point-max))
+            (inferior-ess-send-input)
+            ))
 
 
+;; orgstruct
+;; (add-hook 'ess-mode-hook '(lambda ()
+;;                               (turn-on-orgstruct)
+;;                               (setq-local outline-regexp "##*\\*+\\|\\`")
+;; 			      (setq-local orgstruct-heading-prefix-regexp "##*\\*+\\|\\`")
+;; 			      (progn (orgstruct-mode) (org-global-cycle 3))
+;; 			      ))
+(add-hook 'ess-mode-hook '(lambda ()
+                              (turn-on-orgstruct)
+                              (setq-local orgstruct-heading-prefix-regexp "#### ")))
+;; insert 
+(global-set-key (kbd "<f7> o") "## Local Variables:
+## outline-regexp: \"##*\\\\*+\\\\|\\\\`\"
+## orgstruct-heading-prefix-regexp: \"##*\\\\*+\\\\|\\\\`\"
+## eval: (progn (orgstruct-mode) (org-global-cycle 3))
+## End: ")
+
+;; (add-hook 'ess-mode-hook
+;;       '(lambda ()
+;;          (auto-complete-mode nil)
+;;          (outline-minor-mode 1)
+;;          (setq outline-regexp "\\(^#\\{4,6\\}\\)\\|\\(^[a-zA-Z0-9_\.]+ ?<- ?function(.*{\\)")
+;;          (setq outline-heading-alist
+;;            '(("##' ##" . 1) ("##' ###" . 2) ("##' ####" . 3)
+;;              ("^[a-zA-Z0-9_\.]+ ?<- ?function(.*{" .4)))))
 ;;--------------------------------------------------------------
 ;; poly mode - for Rmarkdown
 ;; (setq load-path

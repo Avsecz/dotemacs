@@ -22,3 +22,6 @@ mkdir -p ~/.emacs.d/
 ln -s $DIR/mylisp ~/.emacs.d/
 ln -s $DIR/dot-emacs-config ~/.emacs.d/
 ln -s $DIR/dotemacs.el ~/.emacs
+
+## add emacs to the launcher:                                                                          
+cp $DIR/app-launchers/* ~/.local/share/applications/

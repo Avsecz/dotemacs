@@ -72,7 +72,7 @@
        '(org-agenda-files (quote ("~/droak/notes/my.org"
 				  "~/droak/notes/notes.org"
 				  "~/droak/notes/work.org"
-				  "~/projects" ; folder containing links to project .org files
+				  "~/projects-work/deepcis/deepcis.org"
 				  )))
        ;; '(org-agenda-files (quote ("~/droak/notes")))
        '(org-default-notes-file "~/droak/notes/work.org"))

@@ -160,7 +160,7 @@
 (setq org-directory "~/droak/notes")
 
 (custom-set-variables
- '(org-agenda-files (quote ("~/droak/notes/my.org" "~/droak/notes/notes.org" "~/droak/notes/work.org" "~/projects")))
+ '(org-agenda-files (quote ("~/droak/notes/my.org" "~/droak/notes/notes.org" "~/droak/notes/work.org")))
  ;; '(org-agenda-files (quote ("~/droak/notes")))
  '(org-default-notes-file "~/droak/notes/my.org")
  ;; '(org-default-notes-file "~/notes.org")
@@ -360,7 +360,7 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/droak/notes/embl.org" "~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org" "~/work-projects/deepcis/deepcis.org")))
+    ("~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-overriding-columns-format
    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)

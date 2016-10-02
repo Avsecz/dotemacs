@@ -43,7 +43,7 @@
 		 'py-autopep8
 		 'company-jedi
 		 'epc
-		 'pyenv-mode
+		 'helm-pydoc
 		 )
 
 ;; (require 'epc)
@@ -154,5 +154,9 @@
 ;; (projectile-register-project-type 'emacs-cask '("Cask") "cask install")
 ;; ;; snip
 ;; (projectile-register-project-type 'go projectile-go-function "go build ./..." "go test ./...")
-(setq abbrev-file-name             ;; tell emacs where to read abbrev
-      "~/.emacs.d/abbrev_defs")    ;; definitions from...
+;; tell emacs where to read abbrev definitions from...
+(setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+
+;; use helm-pydoc - https://github.com/syohex/emacs-helm-pydoc
+(with-eval-after-load "python"
+  (define-key python-mode-map (kbd "C-c C-d") 'helm-pydoc))
