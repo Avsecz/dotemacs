@@ -31,9 +31,11 @@
 
 
 
-(add-hook 'ess-mode-hook 'turn-on-visual-line-mode)
-(add-hook 'ess-mode-hook 'flyspell-prog-mode)
-(add-hook 'ess-mode-hook 'ess-roxy-mode)
+;; (add-hook 'ess-mode-hook 'turn-on-visual-line-mode)
+
+
+;; (add-hook 'ess-mode-hook 'flyspell-prog-mode)
+;; (add-hook 'ess-mode-hook 'ess-roxy-mode)
 
 ;; (setq inferior-R-args "--vanilla") ;; allways run vanilla R
 (setq inferior-R-args "--no-restore-data --no-save")
@@ -164,7 +166,8 @@
       (insert ess-my-smart-key)
     (ess-insert-S-assign-mod)))
 
-(add-hook 'R-mode-hook (lambda () (local-set-key ess-my-smart-key 'ess-smart-lt)))
+;; (add-hook 'R-mode-hook (lambda () (local-set-key ess-my-smart-key 'ess-smart-lt)))
+(add-hook 'ess-mode-hook (lambda () (local-set-key ess-my-smart-key 'ess-smart-lt)))
 (add-hook 'inferior-ess-mode-hook (lambda () (local-set-key ess-my-smart-key 'ess-smart-lt)))
 
 ;; prvious command like in the usual shell
@@ -256,6 +259,8 @@ lsos <- function(..., n=10) {
 ;; 			      ))
 (add-hook 'ess-mode-hook '(lambda ()
                               (turn-on-orgstruct)
+			      (ess-roxy-mode)
+			      (flyspell-prog-mode)
                               (setq-local orgstruct-heading-prefix-regexp "#### ")))
 ;; insert 
 (global-set-key (kbd "<f7> o") "## Local Variables:
