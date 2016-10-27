@@ -62,15 +62,16 @@
 ;; specify to use python3
 ;; (setq py-python-command "python3")
 
-(setq python-shell-interpreter "~/bin/anaconda3/bin/python3")
+;; (setq python-shell-interpreter "~/bin/anaconda3/bin/python3")
+(elpy-use-ipython)
+(setq elpy-rpc-python-command "python3")
+(setq python-shell-interpreter-args "--pylab") ;; --pdb
+
+(setq python-shell-interpreter "ipython3" python-shell-interpreter-args "--simple-prompt --pprint")
 ;; (if (at-work)
 ;;     (setq python-shell-interpreter "~/bin/python_tf")
 ;; )
-(setq elpy-rpc-python-command "python3")
 
-(elpy-use-ipython)
-
-(setq python-shell-interpreter-args "--pylab") ;; --pdb
 
 ;; disable indentation highlighting
 (remove-hook 'elpy-modules 'elpy-module-highlight-indentation)
@@ -82,6 +83,7 @@
              (auto-complete-mode -1))
 )
 
+;; location where the environents are stored
 (setenv "WORKON_HOME"
 	(concat (file-name-directory (executable-find "ipython")) "../envs")
 )

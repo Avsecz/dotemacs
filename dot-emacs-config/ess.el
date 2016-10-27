@@ -259,7 +259,6 @@ lsos <- function(..., n=10) {
 ;; 			      ))
 (add-hook 'ess-mode-hook '(lambda ()
                               (turn-on-orgstruct)
-			      (ess-roxy-mode)
 			      (flyspell-prog-mode)
                               (setq-local orgstruct-heading-prefix-regexp "#### ")))
 ;; insert 
