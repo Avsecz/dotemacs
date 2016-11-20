@@ -17,9 +17,9 @@
 ;; highlight TODO comments in code
 (require 'fic-mode)
 ;; use the following keywords -- "FIXME" "TODO" "BUG"
-(add-hook 'elpy-mode-hook 'turn-on-fic-mode)
-(add-hook 'ess-mode-hook 'turn-on-fic-mode)
-(add-hook 'sh-mode-hook 'turn-on-fic-mode)
+(add-hook 'elpy-mode-hook 'fic-mode)
+(add-hook 'ess-mode-hook 'fic-mode)
+(add-hook 'sh-mode-hook 'fic-mode)
 
 ;;----------------------------------------------------
 ;; neotree
