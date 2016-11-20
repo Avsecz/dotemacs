@@ -44,7 +44,9 @@
 		 'company-jedi
 		 'epc
 		 'helm-pydoc
+		 'snakemake-mode
 		 )
+(require 'snakemake-mode)
 
 ;; (require 'epc)
 ;; (require 'deferred)
@@ -80,7 +82,9 @@
 (add-hook 'elpy-mode-hook
           (lambda ()
              ;; (setq autopair-dont-activate t)
-             (auto-complete-mode -1))
+             (auto-complete-mode -1)
+	     (linum-mode 1)
+	     )
 )
 
 ;; location where the environents are stored
@@ -88,7 +92,16 @@
 	(concat (file-name-directory (executable-find "ipython")) "../envs")
 )
 (pyvenv-mode 1)
-
+;; projectile + pyvenv - put your environment to .venv
+;; https://github.com/jorgenschaefer/pyvenv/issues/51
+(defun pyvenv-autoload ()
+  (require 'projectile)
+  (let* ((pdir (projectile-project-root)) (pfile (concat pdir ".venv")))
+    (if (file-exists-p pfile)
+	(pyvenv-workon (with-temp-buffer
+			 (insert-file-contents pfile)
+			 (nth 0 (split-string (buffer-string))))))))
+(add-hook 'python-mode-hook 'pyvenv-autoload)
 
 ;; Autocomplete
 ;; (eval-after-load "python"
