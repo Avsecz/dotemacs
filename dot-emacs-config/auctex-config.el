@@ -43,6 +43,14 @@
 
 ;; bibtex
 (setq reftex-bibliography-commands '("bibliography" "nobibliography" "addbibresource"))
+;; (add-hook 'reftex-load-hook '(reftex-use-external-file-finders t))
+;; (setq reftex-external-file-finders
+;; '(("tex" . "kpsewhich -format=.tex %f")
+;;   ("bib" . "kpsewhich -format=.bib %f")))
+
+;; (eval-after-load 'helm-mode '(add-to-list 
+;;     'helm-completing-read-handlers-alist '(reftex-citation . nil) )
+;; 		 )
 
 (setq LaTeX-eqnarray-label "eq"
  LaTeX-equation-label "eq"
