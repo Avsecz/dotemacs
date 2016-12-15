@@ -27,4 +27,3 @@
   "Return true if you are at work"
   (string-prefix-p "gagneur-desk07" system-name)
   )
-

@@ -158,6 +158,10 @@
 (load "~/.emacs.d/dot-emacs-config/helm-projectile.el")
 
 ;;----------------------------------------
+;; eshell
+(load "~/.emacs.d/dot-emacs-config/eshell.el")
+
+;;----------------------------------------
 ;; protobuff
 (if (at-home-ubuntu)
     (progn

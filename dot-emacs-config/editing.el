@@ -4,6 +4,7 @@
 ;; support for docker
 (install-package 'dockerfile-mode
 		 'autopair
+		 'yaml-mode
 		 )
 
 ;; run a command in a different directory

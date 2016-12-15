@@ -1,13 +1,10 @@
 ;; helm config
-
-
-
-
 (install-package 'helm
 		 'helm-projectile
 		 'helm-descbinds
 		 'projectile		;project management
 		 'flx-ido		;suggested by projectile
+		 'bind-key
 		 )
 
 
@@ -16,6 +13,7 @@
 (require 'helm)
 (require 'helm-config)
 (require 'helm-projectile)
+(require 'bind-key)
 
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
@@ -117,16 +115,8 @@
 ;; caclulate:
 ;; prefix C-,
 
-
-;; get history
-(require 'helm-eshell)
-(add-hook 'eshell-mode-hook
-          #'(lambda ()
-              (define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history)))
-
 ;; history
 (define-key minibuffer-local-map (kbd "C-c C-l") 'helm-minibuffer-history)
-
 
 
 ;; helm help
@@ -153,4 +143,5 @@
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
 (setq projectile-switch-project-action 'helm-projectile)
+(bind-key* "C-c b" 'helm-projectile)
 ;; (setq projectile-enable-caching t)

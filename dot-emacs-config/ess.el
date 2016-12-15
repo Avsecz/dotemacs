@@ -42,7 +42,7 @@
 ;;(add-hook 'ess-mode-hook 'auto-complete-mode)
 (setq ess-ask-for-ess-directory t)  ;;  ask for directory after starting M-x R ?
 
-(setq inferior-ess-same-window t) ;; open R in the same window ?
+(setq inferior-ess-same-window nil) ;; open R in the same window ?
 
 ;;(speedbar-add-supported-extension ".R")
 (setq ess-help-own-frame 'one)
@@ -315,5 +315,3 @@ lsos <- function(..., n=10) {
      (ess-fl-keyword:=)
      (ess-R-fl-keyword:F&T))))
 )
-
-

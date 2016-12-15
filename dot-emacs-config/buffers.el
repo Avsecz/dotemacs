@@ -155,3 +155,17 @@
 ;; convenient shortcut for ibuffer
 
 (global-set-key (kbd "C-x M-b") 'ibuffer)
+
+;; delete window with C-c k
+(defun delete-single-window (&optional window)
+  "Remove WINDOW from the display.  Default is `selected-window'.
+If WINDOW is the only one in its frame, then `delete-frame' too."
+  (interactive)
+  (save-current-buffer
+    (setq window (or window (selected-window)))
+    (select-window window)
+    (kill-buffer)
+    (if (one-window-p t)
+        (delete-frame)
+        (delete-window (selected-window)))))
+(global-set-key (kbd "C-c k") 'delete-single-window)
