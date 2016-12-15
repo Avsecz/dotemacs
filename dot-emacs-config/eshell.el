@@ -7,6 +7,10 @@
             (eshell-cmpl-initialize)
             (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
 	    (define-key eshell-mode-map (kbd "C-c C-l") 'helm-eshell-history)
+	    (define-key eshell-mode-map (kbd "C-p") 'eshell-previous-input)
+	    (define-key eshell-mode-map (kbd "C-n") 'eshell-next-input)
+	    (define-key eshell-mode-map (kbd "<up>") 'previous-line)
+	    (define-key eshell-mode-map (kbd "<next>") 'next-line)
 	    (define-key eshell-mode-map (kbd "M-r") 'helm-eshell-history))
 	  )
 
