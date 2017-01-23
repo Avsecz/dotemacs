@@ -21,10 +21,12 @@
 		 'with-editor
 		 'xterm-color
 		 'yasnippet
+		 'use-package
 		 ;; 'highlight-parentheses
 		 ;; 'shell-command
 		 ;; 'redo+   ;; doesn't work properly ... use lisp/redo.el instead
 		 )
+(require 'use-package)
 ;; don't use yasnippet in a global mode
 (yas-global-mode 0)
 
@@ -171,6 +173,11 @@
 ;; c-mode
 (load "~/.emacs.d/dot-emacs-config/c-mode.el")
 
+
+;;----------------------------------------
+;; java-mode
+(load "~/.emacs.d/dot-emacs-config/java.el")
+
 ;;----------------------------------------------------------------------------------------
 
 ;; load and save state - not using it
@@ -212,7 +219,7 @@
      (ess-R-fl-keyword:F&T))))
  '(fci-rule-color "#37474f")
  '(flycheck-lintr-linters
-   "with_defaults(line_length_linter(129), default = default_linters[-which(names(default_linters) %in% c(\"assignment_linter\",  \"commas_linter\", \"infix_spaces_linter\", \"camel_case_linter\", \"snake_case_linter\", \"single_quotes_linter\", \"trailing_blank_lines_linter\", \"trailing_whitespace_linter\", \"commented_code_linter\", \"object_usage_linter\"))])")
+   "with_defaults(line_length_linter(129), default = default_linters[-which(names(default_linters) %in% c(\"assignment_linter\",  \"commas_linter\", \"infix_spaces_linter\", \"camel_case_linter\", \"snake_case_linter\", \"single_quotes_linter\", \"trailing_blank_lines_linter\", \"trailing_whitespace_linter\", \"commented_code_linter\"))])")
  '(hl-sexp-background-color "#1c1f26")
  '(ide-skel-tabbar-mwheel-mode nil t)
  '(inhibit-startup-screen t)

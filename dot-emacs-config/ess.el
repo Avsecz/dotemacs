@@ -33,6 +33,9 @@
 
 ;; (add-hook 'ess-mode-hook 'turn-on-visual-line-mode)
 
+;; enable synthax checking - uses lintr R> install.packages("lintr")
+(require 'flycheck)
+;; (add-hook 'ess-mode-hook (lambda () (flycheck-mode t)))   ;; enable it manually every time
 
 ;; (add-hook 'ess-mode-hook 'flyspell-prog-mode)
 ;; (add-hook 'ess-mode-hook 'ess-roxy-mode)
@@ -58,6 +61,7 @@
 ;; poleg C-c C-z komande
 (define-key comint-mode-map (kbd "C-c C-SPC") 'ess-switch-to-inferior-or-script-buffer)
 (define-key ess-mode-map (kbd "C-c C-SPC") 'ess-switch-to-inferior-or-script-buffer)
+(define-key ess-watch-mode-map (kbd "C-c C-SPC") 'ess-switch-to-end-of-ESS)
 
 ;; -----  C-j <-> enter
 
@@ -247,6 +251,7 @@ lsos <- function(..., n=10) {
             (next-line)
             (delete-region (point) (point-max))
             (inferior-ess-send-input)
+	    (add-hook 'ess-post-run-hook 'ess-tracebug) ;http://stackoverflow.com/questions/8910695/r-debugging-code-from-emacs-using-ess-tracebug
             ))
 
 
