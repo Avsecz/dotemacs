@@ -5,7 +5,7 @@
 ;; determine which ess shell to use
 
 ;; use R 3.2.2
-(setq inferior-R-program-name "/opt/modules/i12g/R/3.3.1/bin/R")
+(setq inferior-R-program-name "/opt/modules/i12g/R/3.3.2-Bioc3.4/bin/R")
 ;; (setq inferior-R-program-name "/usr/bin/R")
 
 
