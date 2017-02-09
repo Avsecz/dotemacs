@@ -108,7 +108,7 @@
 (defun ess-insert-spin-text ()
   "Insert %>%  at cursor point."
   (interactive)
-  (insert "##' "))
+  (insert "#' "))
 
 ; ----- insert R code chunk
 (define-key markdown-mode-map (kbd "C-c C-s C-c") 'markdown-insert-R-code-chunk)
