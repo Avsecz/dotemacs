@@ -4,6 +4,7 @@
   1. install emacs-24.4
   2. clone this repository
   3. cd dotemacs
-  4. sh install-emacs-config.sh
-  5. run your emacs
-  
+  4. Install python requirements with `pip install -r requirements.txt`
+     - only aplicable if you are using elpy
+  5. sh install-emacs-config.sh
+  6. run your emacs
