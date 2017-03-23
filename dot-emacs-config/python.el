@@ -3,10 +3,12 @@
 ;; install required pip packages as listed in:
 ;; https://github.com/jorgenschaefer/elpy
 
+
 ;; Used resource:
 ;; https://www.fullstackpython.com/emacs.html
 ;; http://www.jesshamrick.com/2012/09/18/emacs-as-a-python-ide/
 ;; https://realpython.com/blog/python/emacs-the-best-python-editor/
+;; TODO - check http://xiaohanyu.me/oh-my-emacs/modules/ome-python.html
 ;;
 ;;Packages to install with pip:
 ;;# Either of these
@@ -69,6 +71,7 @@
 (setq elpy-rpc-python-command "python3")
 (setq python-shell-interpreter-args "--pylab") ;; --pdb
 
+;; TODO - specify the config?
 (setq python-shell-interpreter "ipython3" python-shell-interpreter-args "--simple-prompt --pprint")
 ;; (if (at-work)
 ;;     (setq python-shell-interpreter "~/bin/python_tf")

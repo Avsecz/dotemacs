@@ -145,3 +145,27 @@
 (setq projectile-switch-project-action 'helm-projectile)
 (bind-key* "C-c b" 'helm-projectile)
 ;; (setq projectile-enable-caching t)
+
+;; ----------------------------------
+;; Occur todo macros
+;; answer minibuffer promt:
+;; http://emacs.stackexchange.com/questions/10393/how-can-i-answer-a-minibuffer-prompt-from-elisp
+(defun occur-todo ()
+  (interactive)
+  (funcall 'occur "TODO")
+  ;; (with-minibuffer-input (call-interactively 'occur)
+  ;;   "\\(foo\\)\\(bar\\)" "\\1");;C-u C-x C-e
+  ;; (interactive)
+  ;; (helm-occur) ;; inser in-between
+  ;; (insert "TODO")
+  )
+
+(global-set-key (kbd "C-c t") 'occur-todo)
+
+(defun projectile-multi-occur-todo ()
+  (interactive)
+  (run-with-timer .05 nil 'insert "TODO")
+  (run-with-timer .1 nil 'execute-kbd-macro (kbd "RET"))
+  (projectile-multi-occur)
+  )
+(global-set-key (kbd "C-c p SPC") 'projectile-multi-occur-todo)

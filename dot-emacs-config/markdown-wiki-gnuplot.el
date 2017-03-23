@@ -19,11 +19,13 @@
 ;; (global-set-key (kbd "C-...") 'wiki)
 
 ;; Setup mediawiki pages
+;;
+;; See how to setup the access: http://wikemacs.org/wiki/Mediawiki.el
 (custom-set-variables
  '(mediawiki-site-alist
    (quote
     (("Wikipedia" "http://en.wikipedia.org/w/" "username" "password" "Main Page")
-     ("mywiki" "http://gagneurweb.genzentrum.lmu.de/wiki/" "" "" "aggagneur:BayesRare_home"))))
+     ("mywiki" "https://i12g-gagneurweb.in.tum.de/wiki/" "" "" "Main_Page"))))
 )
 
 ;; --------------------------------------------

@@ -198,6 +198,8 @@
  '(ansi-color-names-vector
    (vector "#ffffff" "#f36c60" "#8bc34a" "#fff59d" "#4dd0e1" "#b39ddb" "#81d4fa" "#263238"))
  '(column-number-mode t)
+ '(company-idle-delay 0.3)
+ '(company-quickhelp-delay 0.3)
  '(custom-safe-themes
    (quote
     ("2305decca2d6ea63a408edd4701edf5f4f5e19312114c9d1e1d5ffe3112cde58" "e97dbbb2b1c42b8588e16523824bc0cb3a21b91eefd6502879cf5baa1fa32e10" default)))
@@ -227,7 +229,7 @@
  '(mediawiki-site-alist
    (quote
     (("Wikipedia" "http://en.wikipedia.org/w/" "username" "password" "Main Page")
-     ("mywiki" "http://gagneurweb.genzentrum.lmu.de/wiki/" "" "" "aggagneur:BayesRare_home"))))
+     ("mywiki" "https://i12g-gagneurweb.in.tum.de/wiki/" "" "" "Main_Page"))))
  '(org-agenda-custom-commands
    (quote
     (("h" agenda "home"
