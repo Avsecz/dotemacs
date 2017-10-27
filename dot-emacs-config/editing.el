@@ -20,7 +20,8 @@ directory."
 
 (require 'redo)
 
-(global-set-key [(control :)] 'redo)
+;; (global-set-key [(control :)] 'redo) ; Slovenian keyboard
+(global-set-key [(control .)] 'redo) 	; same as ctrl + : on the Slovenian keyboard
 
 (setq x-select-enable-clipboard t)
 

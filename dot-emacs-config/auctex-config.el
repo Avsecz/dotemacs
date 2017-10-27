@@ -1,7 +1,10 @@
 ;; auctex config file
 
 (install-package 'auctex 
-		 'auto-complete-auctex)
+		 'auto-complete-auctex
+		 'auctex-latexmk)
+
+
 
 (setq tex-run-command "pdflatex")
 (add-hook 'TeX-mode-hook
@@ -10,6 +13,10 @@
 
 ;; reftex - added from http://piotrkazmierczak.com/2010/emacs-as-the-ultimate-latex-editor/
 
+;; use latexmk
+(auctex-latexmk-setup)
+(setq auctex-latexmk-inherit-TeX-PDF-mode t)
+;; -------
 
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)

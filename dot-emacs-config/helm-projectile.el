@@ -5,6 +5,7 @@
 		 'projectile		;project management
 		 'flx-ido		;suggested by projectile
 		 'bind-key
+		 ;; 'helm-purpose
 		 )
 
 
@@ -13,6 +14,7 @@
 (require 'helm)
 (require 'helm-config)
 (require 'helm-projectile)
+;; (require 'helm-purpose)
 (require 'bind-key)
 
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
@@ -148,20 +150,15 @@
 
 ;; ----------------------------------
 ;; Occur todo macros
-;; answer minibuffer promt:
-;; http://emacs.stackexchange.com/questions/10393/how-can-i-answer-a-minibuffer-prompt-from-elisp
 (defun occur-todo ()
   (interactive)
   (funcall 'occur "TODO")
-  ;; (with-minibuffer-input (call-interactively 'occur)
-  ;;   "\\(foo\\)\\(bar\\)" "\\1");;C-u C-x C-e
-  ;; (interactive)
-  ;; (helm-occur) ;; inser in-between
-  ;; (insert "TODO")
   )
 
 (global-set-key (kbd "C-c t") 'occur-todo)
 
+;; answer minibuffer promt:
+;; http://emacs.stackexchange.com/questions/10393/how-can-i-answer-a-minibuffer-prompt-from-elisp
 (defun projectile-multi-occur-todo ()
   (interactive)
   (run-with-timer .05 nil 'insert "TODO")

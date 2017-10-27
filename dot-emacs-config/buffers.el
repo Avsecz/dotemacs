@@ -8,6 +8,7 @@
 		 'transpose-frame	;for swaping the windows
 		 'fic-mode		;highlight TODO's in text
 		 'neotree
+		 ;; 'window-purpose
 		 )
 
 ;; winner-mode getting back to your old window configuration
@@ -20,6 +21,14 @@
 (add-hook 'elpy-mode-hook 'fic-mode)
 (add-hook 'ess-mode-hook 'fic-mode)
 (add-hook 'sh-mode-hook 'fic-mode)
+
+;; remove this shortcut - only leads to confusion
+(global-unset-key (kbd "C-z"))
+(global-set-key (kbd "C-z") 'yank)
+
+;;----------------------------------------------------
+;; purpose - https://github.com/bmag/emacs-purpose
+;; (purpose-mode)
 
 ;;----------------------------------------------------
 ;; neotree

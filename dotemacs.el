@@ -6,7 +6,7 @@
 (setq load-path (cons "~/.emacs.d/mylisp" load-path))
 (load "~/.emacs.d/dot-emacs-config/package-management.el")
 
-(load "~/.emacs.d/dot-emacs-config/elisp-functions.el")
+(load "~/.emacs.d/dot-emacs-config/functions.el")
 
 
 ;; TODO - make a function that I can just specify file name without load ...
