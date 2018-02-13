@@ -1,7 +1,7 @@
 * dotemacs
-  This repository represents my .emacs config for emacs-24.4. To install it you should:
+  This repository represents my .emacs config (used with emacs versions 24.4, 24.5, 25.3). To install it you should:
 
-  1. install emacs-24.4
+  1. install emacs (I currently use 25.3)
   2. clone this repository
   3. cd dotemacs
   4. Install python requirements with `pip install -r requirements.txt`
