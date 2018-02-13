@@ -1,7 +1,7 @@
 ;; protobuf-mode
 
-(install-package 'protobuf-mode
-		 'flycheck-protobuf)
+(install-package 'protobuf-mode)
+		 ;; 'flycheck-protobuf)
 (require 'protobuf-mode)
 
 ;; enable flyspell

@@ -14,14 +14,24 @@
 		 'tern-auto-complete
 		 'nodejs-repl
 		 'tide
+		 'restclient
+		 'restclient-helm
+		 'mmm-mode
+		 'mmm-jinja2
 		 )
 
 
+(require 'mmm-jinja2)
 (require 'web-mode)
 (require 'auto-complete)
 (require 'emmet-mode)
 (require 'php-auto-yasnippets)
 (require 'ac-emmet)
+
+;; conveniently quiery with REST api
+;; http://emacsrocks.com/e15.html
+(require 'restclient)
+(require 'restclient-helm)
 
 ;; company mode
 ;; http://blog.binchen.org/posts/code-completion-for-htmljscss-in-emacs.html

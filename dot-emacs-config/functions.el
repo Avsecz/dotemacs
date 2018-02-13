@@ -28,6 +28,12 @@
   (string-prefix-p "gagneur-desk07" system-name)
   )
 
+(defun at-home-desk ()
+  (interactive)
+  "Return true if you are at the beast"
+  (string-prefix-p "home-desk" system-name)
+  )
+
 ;; --------------------------------------------
 (defun find-first-non-ascii-char ()
   "Find the first non-ascii character from point onwards."

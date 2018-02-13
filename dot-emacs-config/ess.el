@@ -1,8 +1,9 @@
 ;; ESS - Emacs speaks statistics config file
 
 ;; install required packages (if they are not installed already):
-(install-package 'ess 
-		 'ess-R-object-popup
+(install-package 'ess
+		 'flycheck
+		 ; 'ess-R-object-popup
 		 'polymode
 		 ;; 'r-autoyas 		;maybe ? 
 		 )
@@ -11,9 +12,14 @@
 ;; (add-to-list 'load-path "~/.emacs.d/ess-14.09/lisp/")
 (require 'ess-site)
 (require 'ess-eldoc) ;; - giving
-(require 'ess-R-object-popup)
+
+
+;; seems that this won't be available
+; (require 'ess-R-object-popup)
 (define-key ess-mode-map (kbd "C-c C-g") 'ess-R-object-popup)
 (define-key comint-mode-map (kbd "C-c C-g") 'ess-R-object-popup)
+
+
 ;; we load ess
 
 ;; set style to Rstudio

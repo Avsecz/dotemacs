@@ -5,6 +5,7 @@
 (install-package 'dockerfile-mode
 		 'autopair
 		 'yaml-mode
+		 'expand-region
 		 )
 
 ;; run a command in a different directory
@@ -15,6 +16,9 @@ directory."
   (let ((default-directory dir))
     (call-interactively 'execute-extended-command)))
 (global-set-key (kbd "M-X") 'in-directory)
+;; expand region ---------------------------------
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 ;; redo command ---------------------------------
 ;; (require 'redo+) ; - it doesn't work properly...
 

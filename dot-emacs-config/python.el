@@ -66,16 +66,17 @@
 ;; specify to use python3
 ;; (setq py-python-command "python3")
 
-;; (setq python-shell-interpreter "~/bin/anaconda3/bin/python3")
-(elpy-use-ipython)
-(setq elpy-rpc-python-command "python3")
-(setq python-shell-interpreter-args "--pylab") ;; --pdb
+;; Interpreter setup
+;; (elpy-use-ipython)
+;; (setq elpy-rpc-python-command "python3")
+;; (setq python-shell-interpreter-args "--pylab") ;; --pdb
+;; (setq python-shell-interpreter "ipython3" python-shell-interpreter-args "--simple-prompt --pprint")
 
-;; TODO - specify the config?
-(setq python-shell-interpreter "ipython3" python-shell-interpreter-args "--simple-prompt --pprint")
-;; (if (at-work)
-;;     (setq python-shell-interpreter "~/bin/python_tf")
-;; )
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
+
+;; (setq python-shell-interpreter "jupyter"
+;;       python-shell-interpreter-args "console --simple-prompt")
 
 
 ;; disable indentation highlighting
@@ -174,7 +175,16 @@
 ;; (projectile-register-project-type 'go projectile-go-function "go build ./..." "go test ./...")
 ;; tell emacs where to read abbrev definitions from...
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+(setq save-abbrevs nil)
+
 
 ;; use helm-pydoc - https://github.com/syohex/emacs-helm-pydoc
 (with-eval-after-load "python"
   (define-key python-mode-map (kbd "C-c C-d") 'helm-pydoc))
+
+
+;; fixtry: https://github.com/jorgenschaefer/elpy/issues/733
+;; Warning (emacs): Python shell prompts cannot be detected.
+(setq python-shell-unbuffered nil)
+(setq python-shell-prompt-detect-failure-warning nil)
+(setq python-shell-prompt-detect-enabled nil)

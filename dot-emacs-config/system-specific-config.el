@@ -5,13 +5,18 @@
 ;; determine which ess shell to use
 
 ;; use R 3.2.2
-(setq inferior-R-program-name "/opt/modules/i12g/R/3.4.0-Bioc3.5/bin/R")
+(setq inferior-R-program-name "/opt/modules/i12g/R/3.4.2-Bioc3.5/bin/R")
 ;; (setq inferior-R-program-name "/usr/bin/R")
 
 
 (if (at-home-ubuntu)
 ;;(setq inferior-R-program-name "/gcm/opt/gagneur/R/3.1.2/bin/R")
-    (setq inferior-R-program-name "/usr/bin/R")
+    (setq inferior-R-program-name "/home/avsec/bin/anaconda3/bin/R")
+  )
+
+(if (at-home-desk)
+;;(setq inferior-R-program-name "/gcm/opt/gagneur/R/3.1.2/bin/R")
+    (setq inferior-R-program-name "/home/avsec/bin/anaconda3/bin/R")
 )
 
 (if (at-qbm)
@@ -72,7 +77,7 @@
        '(org-agenda-files (quote ("~/droak/notes/my.org"
 				  "~/droak/notes/notes.org"
 				  "~/droak/notes/work.org"
-				  "~/projects-work/deepcis/deepcis.org"
+				  ; "~/projects-work/deepcis/deepcis.org"
 				  )))
        ;; '(org-agenda-files (quote ("~/droak/notes")))
        '(org-default-notes-file "~/droak/notes/work.org"))

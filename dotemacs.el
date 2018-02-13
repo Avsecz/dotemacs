@@ -3,6 +3,13 @@
 ;; author: avsec 
 
 ;; load-your own packages and package-management functions
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq load-path (cons "~/.emacs.d/mylisp" load-path))
 (load "~/.emacs.d/dot-emacs-config/package-management.el")
 
@@ -165,10 +172,11 @@
 
 ;;----------------------------------------
 ;; protobuff
-(if (at-home-ubuntu)
-    (progn
-      (load "~/.emacs.d/dot-emacs-config/protobuf.el")
-      ))
+;; (if (at-home-ubuntu)
+;;     (progn
+;;       (load "~/.emacs.d/dot-emacs-config/protobuf.el")
+;;       ))
+;; (load "~/.emacs.d/dot-emacs-config/protobuf.el")
 ;;----------------------------------------
 ;; c-mode
 (load "~/.emacs.d/dot-emacs-config/c-mode.el")
@@ -265,7 +273,7 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/droak/notes/my.org" "~/droak/notes/notes.org" "~/droak/notes/work.org" "~/projects-work/deepcis/deepcis.org")))
+    ("~/droak/notes/my.org" "~/droak/notes/notes.org" "~/droak/notes/work.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-overriding-columns-format
    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
@@ -278,6 +286,9 @@
  '(org-mobile-files (quote (org-agenda-files "~/droak/notes/my.org")))
  '(org-remember-store-without-prompt t)
  '(org-reverse-note-order t)
+ '(package-selected-packages
+   (quote
+    (tabbar-ruler neotree fic-mode transpose-frame smooth-scrolling scroll-restore ensime scala-mode company-c-headers flx-ido helm-descbinds helm-projectile expand-region autopair dockerfile-mode mmm-jinja2 mmm-mode restclient-helm restclient tide nodejs-repl tern-auto-complete tern js3-mode company-web ac-html ac-emmet php-auto-yasnippets emmet-mode web-mode snakemake-mode helm-pydoc company-jedi py-autopep8 ein elpy xterm-color use-package tabbar ssh smart-mode-line s pyvenv polymode outline-magic openwith multi-term mediawiki markdown-mode magit highlight-indentation gnuplot-mode gnuplot flycheck find-file-in-project ess diminish cwl-mode company-quickhelp color-theme auto-complete-auctex auctex-latexmk)))
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
  '(safe-local-variable-values
