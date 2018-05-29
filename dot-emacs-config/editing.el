@@ -2,10 +2,10 @@
 ;; redo
 
 ;; support for docker
-(install-package 'dockerfile-mode
-		 'autopair
+(install-package 'autopair
 		 'yaml-mode
 		 'expand-region
+		 'graphviz-dot-mode
 		 )
 
 ;; run a command in a different directory

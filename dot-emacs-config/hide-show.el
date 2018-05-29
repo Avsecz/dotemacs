@@ -13,6 +13,14 @@
 	    (local-set-key (kbd "C-x <up>")    'hide-body)
 	    (local-set-key (kbd "C-x <down>")  'show-all)
 	    ))
+(add-hook 'bibtex-mode-hook
+	  (lambda()
+	    (local-set-key (kbd "C-x <right>") 'show-entry)
+	    (local-set-key (kbd "C-x <left>")  'hide-entry)
+	    (local-set-key (kbd "C-x <up>")    'hide-body)
+	    (local-set-key (kbd "C-x <down>")  'show-all)
+	    ))
+
 
 ;; text mode
 (add-hook 'text-mode-hook 'outline-minor-mode) 

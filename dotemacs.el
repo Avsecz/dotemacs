@@ -66,6 +66,10 @@
 ;; --------------------------------------------
 ;; magit configuration
 (load "~/.emacs.d/dot-emacs-config/magit.el")
+;; --------------------------------------------
+;; gitlab configuration
+(load "~/.emacs.d/dot-emacs-config/gitlab.el")
+
 
 ;; --------------------------------------------
 ;; everything that has to do with terminal
@@ -155,12 +159,15 @@
 
 ;;---------------------------------------------------------------
 ;; web development
-
 (load "~/.emacs.d/dot-emacs-config/html.el")
 
 ;;----------------------------------------
-
+;; General editing
 (load "~/.emacs.d/dot-emacs-config/editing.el")
+
+;;----------------------------------------
+;; Docker
+(load "~/.emacs.d/dot-emacs-config/docker.el")
 
 ;;----------------------------------------
 ;; awesome helm + projectile
@@ -288,7 +295,7 @@
  '(org-reverse-note-order t)
  '(package-selected-packages
    (quote
-    (tabbar-ruler neotree fic-mode transpose-frame smooth-scrolling scroll-restore ensime scala-mode company-c-headers flx-ido helm-descbinds helm-projectile expand-region autopair dockerfile-mode mmm-jinja2 mmm-mode restclient-helm restclient tide nodejs-repl tern-auto-complete tern js3-mode company-web ac-html ac-emmet php-auto-yasnippets emmet-mode web-mode snakemake-mode helm-pydoc company-jedi py-autopep8 ein elpy xterm-color use-package tabbar ssh smart-mode-line s pyvenv polymode outline-magic openwith multi-term mediawiki markdown-mode magit highlight-indentation gnuplot-mode gnuplot flycheck find-file-in-project ess diminish cwl-mode company-quickhelp color-theme auto-complete-auctex auctex-latexmk)))
+    (graphviz-dot-mode docker sphinx-mode sphinx-doc yasnippet-snippets r-autoyas elpygen tabbar-ruler neotree fic-mode transpose-frame smooth-scrolling scroll-restore ensime scala-mode company-c-headers flx-ido helm-descbinds helm-projectile expand-region autopair dockerfile-mode mmm-jinja2 mmm-mode restclient-helm restclient tide nodejs-repl tern-auto-complete tern js3-mode company-web ac-html ac-emmet php-auto-yasnippets emmet-mode web-mode snakemake-mode helm-pydoc company-jedi py-autopep8 ein elpy xterm-color use-package tabbar ssh smart-mode-line s pyvenv polymode outline-magic openwith multi-term mediawiki markdown-mode magit highlight-indentation gnuplot-mode gnuplot flycheck find-file-in-project ess diminish cwl-mode company-quickhelp color-theme auto-complete-auctex auctex-latexmk)))
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
  '(safe-local-variable-values
@@ -348,6 +355,9 @@
 ;; --------------------------------------------
 ;; load aliases 
 (load "~/.emacs.d/dot-emacs-config/alias.el")
+;; --------------------------------------------
+;; load nim
+(load "~/.emacs.d/dot-emacs-config/nim.el")
 ;; --------------------------------------------
 
 ;; overwrite jedi:complete

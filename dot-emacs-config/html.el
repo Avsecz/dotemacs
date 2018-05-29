@@ -18,6 +18,7 @@
 		 'restclient-helm
 		 'mmm-mode
 		 'mmm-jinja2
+		 'jinja2-mode
 		 )
 
 

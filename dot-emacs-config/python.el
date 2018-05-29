@@ -47,6 +47,10 @@
 		 'epc
 		 'helm-pydoc
 		 'snakemake-mode
+		 'yasnippet
+		 'yasnippet-snippets
+		 'sphinx-doc
+		 'sphinx-mode
 		 )
 (require 'snakemake-mode)
 
