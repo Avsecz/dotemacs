@@ -55,3 +55,17 @@ directory."
 
 (require 'autopair)
 (autopair-global-mode) ;; enable autopair in all buffers
+
+
+;; --------------
+;; tramp
+(setq remote-file-name-inhibit-cache nil)
+(setq vc-ignore-dir-regexp
+      (format "%s\\|%s"
+                    vc-ignore-dir-regexp
+                    tramp-file-name-regexp))
+(setq tramp-verbose 1)
+
+
+;; associate .tsv with ses-mode
+(add-to-list 'auto-mode-alist '("\\.tsv\\'" . ses-mode))

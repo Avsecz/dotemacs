@@ -51,8 +51,15 @@
 		 'yasnippet-snippets
 		 'sphinx-doc
 		 'sphinx-mode
+		 'editorconfig
 		 )
 (require 'snakemake-mode)
+
+;; respect editorconfig files
+;; https://github.com/editorconfig/editorconfig-emacs
+;; https://editorconfig.org/
+(require 'editorconfig)
+(editorconfig-mode 1)
 
 ;; (require 'epc)
 ;; (require 'deferred)
@@ -79,6 +86,8 @@
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "-i --simple-prompt")
 
+;; Search through both, *.py and *ipynb files using C-c C-s
+;; (elpy-rgrep-file-pattern "*.py *.ipynb")
 ;; (setq python-shell-interpreter "jupyter"
 ;;       python-shell-interpreter-args "console --simple-prompt")
 
@@ -135,8 +144,9 @@
 ;; - W391 - Remove trailing blank lines.
 ;; - W690 - Fix various deprecated code (via lib2to3).
 ;; - E302 - expected white lines
+;; - E731 - allow lambda functions
 (require 'py-autopep8)
-(setq py-autopep8-options '("--ignore=E501,W293,W391,W690,E302"))
+(setq py-autopep8-options '("--ignore=E501,W293,W391,W690,E302,E731"))
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
 
@@ -192,3 +202,12 @@
 (setq python-shell-unbuffered nil)
 (setq python-shell-prompt-detect-failure-warning nil)
 (setq python-shell-prompt-detect-enabled nil)
+
+
+;; open gin-config files (.gin) in conf mode
+(add-to-list 'auto-mode-alist '("\\.gin\\'" . conf-mode))
+
+
+;; https://github.com/pyviz/labmode
+;; (add-to-list 'load-path "~/workspace/github/misc/labmode/emacs")
+;; (require 'lab-mode)

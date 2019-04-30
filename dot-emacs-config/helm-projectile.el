@@ -7,6 +7,7 @@
 		 'bind-key
 		 'helm-swoop            ; https://github.com/ShingoFukuyama/helm-swoop
 		 'helm-ag
+		 'helm-tramp
 		 ;; 'helm-purpose
 		 )
 
@@ -17,6 +18,7 @@
 (require 'helm-config)
 (require 'helm-projectile)
 (require 'helm-swoop)  ;; M-i - https://github.com/ShingoFukuyama/helm-swoop, fancy search
+(require 'helm-tramp)
 
 ;; https://github.com/syohex/emacs-helm-ag
 (require 'helm-ag)  ;; C-c p s s -> search occurences in the repo, use C-j to jump to the field
@@ -222,3 +224,23 @@
 ;; If you prefer fuzzy matching
 (setq helm-swoop-use-fuzzy-match nil)
 
+;;; --------------------------------------------
+;;; Trump
+(setq tramp-default-method "ssh")
+;; (define-key global-map (kbd "C-c s") 'helm-tramp)
+
+;; speedup
+(add-hook 'helm-tramp-pre-command-hook '(lambda () 
+				     (projectile-mode 0)
+				     ;; (editorconfig-mode 0)
+				     ))
+(add-hook 'helm-tramp-quit-hook '(lambda () 
+			      (projectile-mode 1)
+			      ;; (editorconfig-mode 1)
+			      ))
+
+(setq make-backup-files nil)
+(setq create-lockfiles nil)
+(eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
+
+(setq helm-tramp-docker-user "avsec")

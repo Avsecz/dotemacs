@@ -220,6 +220,7 @@
     ("2305decca2d6ea63a408edd4701edf5f4f5e19312114c9d1e1d5ffe3112cde58" "e97dbbb2b1c42b8588e16523824bc0cb3a21b91eefd6502879cf5baa1fa32e10" default)))
  '(display-time-mode t)
  '(ediff-split-window-function (quote split-window-horizontally))
+ '(elpy-rgrep-file-pattern "*.py *.ipynb *.smk Snakefile")
  '(elpy-test-pytest-runner-command (quote ("python" "-m" "pytest")))
  '(elpy-test-runner (quote elpy-test-pytest-runner))
  '(ess-R-font-lock-keywords
@@ -280,7 +281,7 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/droak/notes/my.org" "~/droak/notes/notes.org" "~/droak/notes/work.org")))
+    ("~/droak/notes/research.org" "~/droak/notes/my.org" "~/droak/notes/notes.org" "~/droak/notes/work.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-overriding-columns-format
    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
@@ -295,7 +296,7 @@
  '(org-reverse-note-order t)
  '(package-selected-packages
    (quote
-    (graphviz-dot-mode docker sphinx-mode sphinx-doc yasnippet-snippets r-autoyas elpygen tabbar-ruler neotree fic-mode transpose-frame smooth-scrolling scroll-restore ensime scala-mode company-c-headers flx-ido helm-descbinds helm-projectile expand-region autopair dockerfile-mode mmm-jinja2 mmm-mode restclient-helm restclient tide nodejs-repl tern-auto-complete tern js3-mode company-web ac-html ac-emmet php-auto-yasnippets emmet-mode web-mode snakemake-mode helm-pydoc company-jedi py-autopep8 ein elpy xterm-color use-package tabbar ssh smart-mode-line s pyvenv polymode outline-magic openwith multi-term mediawiki markdown-mode magit highlight-indentation gnuplot-mode gnuplot flycheck find-file-in-project ess diminish cwl-mode company-quickhelp color-theme auto-complete-auctex auctex-latexmk)))
+    (org-download py-test py-import-check py-yapf pydoc pycoverage jedi-direx jedi-core jedi flycheck-nim nim-mode graphviz-dot-mode docker sphinx-mode sphinx-doc yasnippet-snippets r-autoyas elpygen tabbar-ruler neotree fic-mode transpose-frame smooth-scrolling scroll-restore ensime scala-mode company-c-headers flx-ido helm-descbinds helm-projectile expand-region autopair dockerfile-mode mmm-jinja2 mmm-mode restclient-helm restclient tide nodejs-repl tern-auto-complete tern js3-mode company-web ac-html ac-emmet php-auto-yasnippets emmet-mode web-mode snakemake-mode helm-pydoc company-jedi py-autopep8 ein elpy xterm-color use-package tabbar ssh smart-mode-line s pyvenv polymode outline-magic openwith multi-term mediawiki markdown-mode magit highlight-indentation gnuplot-mode gnuplot flycheck find-file-in-project ess diminish cwl-mode company-quickhelp color-theme auto-complete-auctex auctex-latexmk)))
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
  '(safe-local-variable-values

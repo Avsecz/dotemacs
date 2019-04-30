@@ -1,6 +1,7 @@
 ;; 
 ;; required packages for this config
-(install-package 'org 
+(install-package 'org
+		 ;; 'org-download
 		 'outline-magic)
 
 (require 'org)
@@ -19,6 +20,7 @@
 ;; 
 
 (require 'org-mouse)
+
 (define-key org-mode-map
   (kbd "C-<tab>") 'tabbar-forward)
 (add-hook 'org-mode-hook 'auto-complete-mode)
@@ -312,6 +314,31 @@
 
 
 ;; --------------------------------------------
+(defun my-org-screenshot ()
+  "Take a screenshot into a time stamped unique-named file in the
+same directory as the org-buffer and insert a link to this file."
+  (interactive)
+  (setq filename
+        (concat
+         (make-temp-name
+          (concat (file-name-nondirectory (buffer-file-name))
+                  "_imgs/"
+                  (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
+  (unless (file-exists-p (file-name-directory filename))
+    (make-directory (file-name-directory filename)))
+  ; take screenshot
+  (if (eq system-type 'darwin)
+      (call-process "screencapture" nil nil nil "-i" filename))
+  (if (eq system-type 'gnu/linux)
+      (call-process "import" nil nil nil filename))
+  ; insert into file if correctly taken
+  (if (file-exists-p filename)
+      (insert (concat "[[file:" filename "]]")))
+  (org-display-inline-images)
+  )
+(define-key org-mode-map
+  (kbd "C-c s") 'my-org-screenshot)
+;; --------------------------------------------
 ;; include R support
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -361,7 +388,7 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org")))
+    ("~/droak/notes/work.org" "~/droak/notes/my.org" "~/droak/notes/notes.org" "~/droak/notes/gist.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-overriding-columns-format
    "%40ITEM(Task) %TODO %SCHEDULED %11Effort(Est. Effort){:} %6CLOCKSUM(T-done)  %6CLOSED(Closed)" t)
