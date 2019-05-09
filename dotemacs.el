@@ -296,7 +296,7 @@
  '(org-reverse-note-order t)
  '(package-selected-packages
    (quote
-    (magic-latex-buffer company-auctex org-download py-test py-import-check py-yapf pydoc pycoverage jedi-direx jedi-core jedi flycheck-nim nim-mode graphviz-dot-mode docker sphinx-mode sphinx-doc yasnippet-snippets r-autoyas elpygen tabbar-ruler neotree fic-mode transpose-frame smooth-scrolling scroll-restore ensime scala-mode company-c-headers flx-ido helm-descbinds helm-projectile expand-region autopair dockerfile-mode mmm-jinja2 mmm-mode restclient-helm restclient tide nodejs-repl tern-auto-complete tern js3-mode company-web ac-html ac-emmet php-auto-yasnippets emmet-mode web-mode snakemake-mode helm-pydoc company-jedi py-autopep8 ein elpy xterm-color use-package tabbar ssh smart-mode-line s pyvenv polymode outline-magic openwith multi-term mediawiki markdown-mode magit highlight-indentation gnuplot-mode gnuplot flycheck find-file-in-project ess diminish cwl-mode company-quickhelp color-theme auto-complete-auctex auctex-latexmk)))
+    (helm-bibtex company-auctex org-download py-test py-import-check py-yapf pydoc pycoverage jedi-direx jedi-core jedi flycheck-nim nim-mode graphviz-dot-mode docker sphinx-mode sphinx-doc yasnippet-snippets r-autoyas elpygen tabbar-ruler neotree fic-mode transpose-frame smooth-scrolling scroll-restore ensime scala-mode company-c-headers flx-ido helm-descbinds helm-projectile expand-region autopair dockerfile-mode mmm-jinja2 mmm-mode restclient-helm restclient tide nodejs-repl tern-auto-complete tern js3-mode company-web ac-html ac-emmet php-auto-yasnippets emmet-mode web-mode snakemake-mode helm-pydoc company-jedi py-autopep8 ein elpy xterm-color use-package tabbar ssh smart-mode-line s pyvenv polymode outline-magic openwith multi-term mediawiki markdown-mode magit highlight-indentation gnuplot-mode gnuplot flycheck find-file-in-project ess diminish cwl-mode company-quickhelp color-theme auto-complete-auctex auctex-latexmk)))
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler)))
  '(safe-local-variable-values
@@ -370,6 +370,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(preview-reference-face ((t (:background "white" :foreground "black"))))
  '(tabbar-button ((t (:inherit tabbar-default :foreground "dark red"))))
  '(tabbar-button-highlight ((t (:inherit tabbar-default))))
  '(tabbar-default ((t (:inherit variable-pitch :background "#959A79" :foreground "black" :weight bold))))

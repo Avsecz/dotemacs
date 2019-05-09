@@ -17,6 +17,11 @@
 (add-hook 'TeX-mode-hook
 	  (lambda()
 	    (local-set-key (kbd "C-c f") 'xah-fill-or-unfill)
+	    (local-set-key (kbd "C-c M-[") 'crossref-lookup)
+	    ))
+(add-hook 'bibtex-mode-hook
+	  (lambda()
+	    (local-set-key (kbd "C-c M-[") 'crossref-lookup)
 	    ))
 (defun xah-fill-or-unfill ()
   "Reformat current paragraph or region to `fill-column', like `fill-paragraph' or “unfill”.
@@ -126,23 +131,8 @@ LaTeX-section-title
 ;; LaTeX-section-toc
 LaTeX-section-section
 LaTeX-section-label))
-(eval-after-load
-    "latex"
-  '(TeX-add-style-hook
-    "cleveref"
-    (lambda ()
-      (if (boundp 'reftex-ref-style-alist)
-      (add-to-list
-       'reftex-ref-style-alist
-       '("Cleveref" "cleveref"
-         (("\\cref" ?c) ("\\Cref" ?C) ("\\cpageref" ?d) ("\\Cpageref" ?D)))))
-      (reftex-ref-style-activate "Cleveref")
-      (add-to-list 'reftex-ref-style-default-list "Cleveref")
-      (TeX-add-symbols
-       '("cref" TeX-arg-ref)
-       '("Cref" TeX-arg-ref)
-       '("cpageref" TeX-arg-ref)
-       '("Cpageref" TeX-arg-ref)))))
+
+
 
 
 ;; biblatex citation style:
@@ -204,8 +194,27 @@ LaTeX-section-label))
 ;; (setq reftex-format-ref-function 'reftex-format-cref)
 
 
+;; Cleverref
+;; (eval-after-load
+;;     "latex"
+;;   '(TeX-add-style-hook
+;;     "cleveref"
+;;     (lambda ()
+;;       (if (boundp 'reftex-ref-style-alist)
+;;       (add-to-list
+;;        'reftex-ref-style-alist
+;;        '("Cleveref" "cleveref"
+;;          (("\\cref" ?c) ("\\Cref" ?C) ("\\cpageref" ?d) ("\\Cpageref" ?D)))))
+;;       (reftex-ref-style-activate "Cleveref")
+;;       (add-to-list 'reftex-ref-style-default-list "Cleveref")
+;;       (TeX-add-symbols
+;;        '("cref" TeX-arg-ref)
+;;        '("Cref" TeX-arg-ref)
+;;        '("cpageref" TeX-arg-ref)
+;;        '("Cpageref" TeX-arg-ref)))))
+
 ;; set \\cref to default: (you could change this)
-(setq reftex-refstyle "\\cref")
+(setq reftex-refstyle "\\ref")
 
 
 
@@ -223,6 +232,9 @@ LaTeX-section-label))
 ;; don't mess around with sub/superscripts
 (setq org-export-with-sub-superscripts nil)
 (global-set-key (kbd "C-c C-a ") 'align-current)
+
+;; better preview
+(setq preview-scale-function 2.0)  ;; larger figure
 
 (define-key LaTeX-mode-map
   (kbd "C-c t") 'orgtbl-insert-radio-table)

@@ -27,7 +27,7 @@
 ;; --------------------------------------------
 ;; determine window specific size
 
-(if (at-home-ubuntu)
+(if (at-home-desk)
     (progn
       ;; set a different font size:
       (set-face-attribute 'default nil :height 120)

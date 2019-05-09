@@ -8,6 +8,7 @@
 		 'helm-swoop            ; https://github.com/ShingoFukuyama/helm-swoop
 		 'helm-ag
 		 'helm-tramp
+		 'helm-bibtex
 		 ;; 'helm-purpose
 		 )
 
@@ -19,6 +20,9 @@
 (require 'helm-projectile)
 (require 'helm-swoop)  ;; M-i - https://github.com/ShingoFukuyama/helm-swoop, fancy search
 (require 'helm-tramp)
+(require 'helm-bibtex)
+
+(autoload 'helm-bibtex "helm-bibtex" "" t)
 
 ;; https://github.com/syohex/emacs-helm-ag
 (require 'helm-ag)  ;; C-c p s s -> search occurences in the repo, use C-j to jump to the field
