@@ -2,16 +2,21 @@
 
 ;; install required packages (if they are not installed already):
 (install-package 'ess
+		 ;; 'ess-eldoc
 		 'flycheck
 		 ; 'ess-R-object-popup
 		 'polymode
+		 ;; 'poly-R
+		 ;; 'poly-markdown
+		 ;; 'poly-org
+		 ;; 'poly-noweb
 		 ;; 'r-autoyas 		;maybe ? 
 		 )
 
 ;; I compiled it from source
 ;; (add-to-list 'load-path "~/.emacs.d/ess-14.09/lisp/")
 (require 'ess-site)
-(require 'ess-eldoc) ;; - giving
+;; (require 'ess-eldoc) ;; - giving
 
 
 ;; seems that this won't be available
@@ -293,10 +298,10 @@ lsos <- function(..., n=10) {
 ;;       (append '("~/.emacs.d/polymode/"  "~/.emacs.d/polymode/modes")
 ;;               load-path))
 
-(require 'poly-R)
-(require 'poly-markdown)
-(require 'poly-org)
-(require 'poly-noweb)
+;; (require 'poly-R)
+;; (require 'poly-markdown)
+;; (require 'poly-org)
+;; (require 'poly-noweb)
 ;; ;; had to install pandoc on linux
 
 ;; ;;; MARKDOWN
@@ -306,7 +311,7 @@ lsos <- function(..., n=10) {
 ;; ;;; R modes
 ;; (add-to-list 'auto-mode-alist '("\\.Snw" . poly-noweb+r-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+;; (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
 
 ;; --------------------------------------------
 

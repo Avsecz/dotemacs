@@ -8,6 +8,7 @@
 		 'transpose-frame	;for swaping the windows
 		 'fic-mode		;highlight TODO's in text
 		 'neotree
+		 'centered-window
 		 ;; 'window-purpose
 		 )
 
@@ -25,6 +26,13 @@
 ;; remove this shortcut - only leads to confusion
 (global-unset-key (kbd "C-z"))
 (global-set-key (kbd "C-z") 'yank)
+
+;; Allow centered window
+;; (require 'centered-window)
+(require 'centered-window)
+;; (centered-window-mode )
+(setq cwm-centered-window-width 90)
+(global-set-key (kbd "C-c M-c") 'centered-window-mode)
 
 ;;----------------------------------------------------
 ;; purpose - https://github.com/bmag/emacs-purpose

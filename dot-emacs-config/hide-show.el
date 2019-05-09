@@ -5,8 +5,8 @@
 ;; Do not hide comments when hidding all
 (setq hs-hide-comments-when-hiding-all nil)
 
-(add-hook 'Tex-mode-hook 'outline-minor-mode) ;;LaTeX
-(add-hook 'Tex-mode-hook
+(add-hook 'TeX-mode-hook 'outline-minor-mode) ;;LaTeX
+(add-hook 'TeX-mode-hook
 	  (lambda()
 	    (local-set-key (kbd "C-x <right>") 'show-entry)
 	    (local-set-key (kbd "C-x <left>")  'hide-entry)
